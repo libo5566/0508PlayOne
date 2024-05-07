@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.register-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('your-retro-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.register {
+    background-color: #FBF0D9; /* 紙張白色背景 */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    width: 90%;
+}
+
+.register-title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: #704214; /* 皮革棕 */
+}
+
+.form-group label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #704214; /* 皮革棕 */
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #DECBA4; /* 橡子棕 */
+    border-radius: 5px;
+    background-color: #FFFBEA; /* 橙皮黃 */
+    color: #704214; /* 皮革棕 */
+    font-size: 1em;
+}
+
+.form-btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 垂直置中 */
+}
+
+.form-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #8B4513; /* 馬鞍棕 */
+    color: #FFFFFF; /* 純潔白 */
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.form-btn:hover,
+.form-btn:focus {
+    background-color: #A0522D; /* 世界棕 */
+}
+
+.login-link {
+    text-align: center; /* 置中文字 */
+    margin-top: 10px; /* 如果需要的話 */
+    color: #704214; /* 皮革棕 */
+}
+
+a {
+    color: inherit; /* 鏈接保持和文字一樣的顏色 */
+    text-decoration: none; /* 去掉下劃線 */
+}
+
+/* 響應式布局 */
+@media (max-width: 768px) {
+    .register {
+        width: calc(100% - 40px);
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-title {
+        font-size: 1.5em;
+    }
+
+    .register {
+        padding: 20px;
+    }
+
+    .form-btn {
+        font-size: 1em;
+    }
+}
+    </style>
+</head>
+<body>
+    <main>
+        <section class="register-section">
+            <div class="register" id="registerForm">
+                <div class="register-title">用戶註冊</div>
+                <div class="form-group">
+                    <label for="register-username">用戶名</label>
+                    <input type="text" id="register-username" name="username" required="">
+                </div>
+                <div class="form-group">
+                    <label for="register-email">電子郵箱</label>
+                    <input type="email" id="register-email" name="email" required="">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">密碼</label>
+                    <input type="password" id="register-password" name="password" required="">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">確認密碼</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required="">
+                </div>
+                <div class="form-btn-group">
+                    <button type="submit" class="form-btn">立即註冊</button>
+                </div>
+                <p class="login-link">已經有帳號了？ <a href="#">立即登入</a></p>
+            </div>
+        </section>
+
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    var registerForm = document.getElementById('registerForm');
+
+    registerForm.addEventListener('submit', function (e) {
+        // 阻止表單的未填寫
+        e.preventDefault();
+
+        // 獲取註冊訊息
+        var username = document.getElementById('register-username').value.trim();
+        var email = document.getElementById('register-email').value.trim();
+        var password = document.getElementById('register-password').value;
+        var confirmPassword = document.getElementById('confirm-password').value;
+
+        // 基本驗證
+        if (!username || !email || !password || !confirmPassword) {
+            alert('請填寫所有必填欄位。');
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert('兩次輸入的密碼不一致。');
+            return false;
+        }
+
+        console.log('提交註冊表單', { username, email, password });
+
+        registerForm.reset(); // 表單重置
+    });
+});
+    </script>
+    
+</body>
+</html>

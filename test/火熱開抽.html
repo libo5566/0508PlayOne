@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火熱開抽</title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<style>
+    .fire {
+        background-color: #f7f0e7;
+        position: relative;
+        padding-bottom: 100px;
+        /* 为fire区块底部添加20px的Padding，可以根据需要调整这个值 */
+    }
+
+    .fire-title {
+        position: absolute;
+        top: 20px;
+        left: 100px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 36px;
+        color: #3b83bd;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        /* 調整下劃線粗細 */
+        text-underline-offset: 10px;
+        /* 調整下劃線與文字之間的距離 */
+        margin-bottom: 100px;
+    }
+
+
+
+    .label-block {
+        position: absolute;
+        background-color: #FBDE57;
+        top: -25px;
+        left: -20px;
+        padding: 5px 10px;
+    }
+
+    .label-block::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 0px;
+        border-bottom: 20px solid transparent;
+        border-right: 20px solid #F4C243;
+        display: block;
+    }
+
+    .card-shop {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .card-container {
+        position: relative;
+        width: 280px;
+        height: 320px;
+        padding: 20px;
+        margin: 0 25px;
+        background-color: #FFFFFF;
+        text-align: center;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-container:hover .image-block img {
+        transform: scale(1.2);
+        /* Enlarge the image */
+    }
+
+    .image-block {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .image-block img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        /* 让图片宽度充满父容器 */
+        height: 200px;
+        /* 让高度充满父容器 */
+        object-fit: cover;
+        /* 保持图片比例并覆盖整个框 */
+        transition: transform 0.3s ease-in-out;
+        /* Add a smooth transition effect */
+    }
+
+    .text-block {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        color: #0a0a0a;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 16px;
+    }
+
+    .content-block {
+        width: 100%;
+        text-align: left;
+        padding: 5px 0;
+    }
+
+    .content-block:nth-child(1) {
+        flex: 0 0 100%;
+        /* 宽度为100% */
+    }
+
+    .content-block:nth-child(2),
+    .content-block:nth-child(3) {
+        flex: 0 0 50%;
+        /* 宽度为48% */
+    }
+
+    .content-block:nth-child(3) {
+        text-align: right;
+        /* 文本右对齐 */
+    }
+</style>
+
+<body>
+    <section>
+        <div class="fire">
+            <div class="fire-title">
+                <h2>火熱開抽中</h2>
+            </div>
+
+            <div class="card-shop-container">
+                <div class="card-shop">
+                    <div class="card-container" data-url="onepiece.html">
+                        <div class="label-block">
+                            多抽優惠!
+                        </div>
+                        <div class="image-block">
+                            <img src="../playone/one piece the new king/banner.jpg" alt="商品圖片">
+                        </div>
+                        <div class="text-block">
+                            <div class="content-block">
+                                產品名:<br>
+                                ONE PIECE航海王-<br>
+                                新四皇
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">差低玩具
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">1抽305元
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-container">
+                        <div class="label-block">
+                            多抽優惠!
+                        </div>
+                        <div class="image-block">
+                            <img src="../playone/BLUE LOCK -Take Up Arms Striker!!-/BLUE LOCK -Take Up Arms Striker!!-.jpg"
+                                alt="商品圖片">
+                        </div>
+                        <div class="text-block">
+                            <div class="content-block">
+                                產品名:<br>
+                                BLUE LOCK 藍色監獄～<br>
+                                拿起武器的毀滅者<br>
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">虧賊玩具
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">1抽300元
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="card-container">
+                        <div class="label-block">
+                            多抽優惠!
+                        </div>
+                        <div class="image-block">
+                            <img src="../playone/HUNTER×HUNTER _ REVENGE OF SCARLET/revenge of scarlet banner.jpg"
+                                alt="商品圖片">
+                        </div>
+                        <div class="text-block">
+                            <div class="content-block">
+                                產品名:<br>
+                                HUNTER×HUNTER 獵人<br>
+                                REVENGE OF SCARLET
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">點點玩具
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">1抽350元
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-container">
+                        <div class="label-block">
+                            多抽優惠!
+                        </div>
+                        <div class="image-block">
+                            <img src="../playone/HUNTER×HUNTER- DAY OF DEPARTURE/Day Of Departure.jpg" alt="商品圖片">
+                        </div>
+                        <div class="text-block">
+                            <div class="content-block">
+                                產品名:<br>
+                                HUNTER×HUNTER<br>
+                                DAY OF DEPARTURE
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">虧賊玩具
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">1抽300元
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-container">
+                        <div class="label-block">
+                            多抽優惠!
+                        </div>
+                        <div class="image-block">
+                            <img src="../playone/JOJO_DIAMOND IS UNBREAKABLE/banner.jpg" alt="商品圖片">
+                        </div>
+                        <div class="text-block">
+                            <div class="content-block">
+                                產品名:<br>
+                                JOJO 的奇妙冒險-不滅鑽石
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">虧賊玩具
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">1抽300元
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="card-container">
+                        <div class="label-block">
+                            多抽優惠!
+                        </div>
+                        <div class="image-block">
+                            <img src="../playone/Jujutsu Kaisen_3/Banner.jpg" alt="商品圖片">
+                        </div>
+                        <div class="text-block">
+                            <div class="content-block">
+                                產品名:<br>
+                                咒術迴戰-懷玉・玉折 參
+
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">虧賊玩具
+                            </div>
+                            <div class="content-block">
+                                <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                    viewBox="0 0 24 24">1抽300元
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #result-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            max-width: 1280px;
+            width: 100%;
+            margin: auto;
+            padding: 5px;
+        }
+
+        .flex-item {
+            background-color: transparent;
+            text-align: center;
+            margin: 10px;
+            box-sizing: border-box;
+            height: auto;
+            flex: 0 1 calc(20% - 20px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flex-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 1024px) {
+            .flex-item {
+                flex: 0 1 calc(25% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .flex-item {
+                flex: 0 1 calc(33.333% - 20px);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="result-section"></div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () { // 确保DOM完全加载后再运行代码
+
+        const container = document.getElementById('result-section'); // 获取容器元素
+        for (let i = 0; i < 90; i++) { // 循环90次创建方格
+            const square = document.createElement('div'); // 创建方格
+            square.className = 'flex-item'; // 分配class以应用CSS样式
+            square.id = `${i}`; // 给每个方格一个唯一的ID
+
+            const img = document.createElement('img');
+            img.src = `/playone/icon/ticket.jpg`;
+            img.alt = 'Ticket';
+
+            // 将<img>元素添加到方块中
+            square.appendChild(img);
+
+            // Optional: 如果你想在创建方格的时候添加点击事件
+            square.addEventListener('click', function () {
+                alert(`選擇第 ${this.id}張籤 !`); // 弹窗显示被点击方格的ID
+                // 接下来可以添加你处理点击事件的代码
+            });
+
+            container.appendChild(square); // 将方格添加到容器中
+        }
+    });
+</script>
+
+</html>

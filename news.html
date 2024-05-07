@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們</title>
+    <!-- 重設css -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font-awesome -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- 貓頭鷹輪播 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        .news {
+            display: flex;
+            flex-direction: column;
+            font-size: 1rem;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            box-sizing: border-box;
+        }
+
+        .news-title h2 {
+            color: #757575;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1em;
+            text-align: left;
+            line-height: 1.6;
+            margin: 30px auto;
+            height: auto;
+            width: 100%;
+            text-transform: uppercase;
+            display: block;
+            margin: 1vw 4vw;
+        }
+
+        :root {
+            --color-white: #fff;
+            --color-prime: rgba(133, 113, 69);
+            --color-grey: #e2e2e2;
+            --color-grey-dark: #a2a2a2;
+        }
+
+        .news-card {
+            display: flex;
+            flex-direction: column;
+            margin: 1rem auto;
+            box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.6%;
+            background: var(--color-white);
+            line-height: 1.4;
+            font-family: sans-serif;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        @keyframes rubberBand {
+            0% {
+                transform: scale(1);
+            }
+
+            30% {
+                transform: scale(1.25);
+            }
+
+            40% {
+                transform: scale(0.75);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            65% {
+                transform: scale(0.95);
+            }
+
+            75% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .news-card a {
+            color: inherit;
+        }
+
+        .news-card a:hover {
+            color: var(--color-prime);
+        }
+
+        .news-card:hover .photo {
+            animation: rubberBand 0.9s ease;
+        }
+
+        .news-card .meta {
+            position: relative;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .news-card .photo {
+            position: relative;
+            overflow: hidden;
+            /* 隐藏超出容器大小的图片部分 */
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.2s;
+        }
+
+        .news-card .news-details,
+        .news-card .news-details ul {
+            margin: auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .news-card .news-details {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -100%;
+            margin: auto;
+            transition: left 0.2s;
+            background: rgba(133, 113, 69, 0.7);
+            color: var(--color-white);
+            padding: 10px;
+            width: 100%;
+            font-size: 1.2rem;
+        }
+
+        .news-card .news-details a {
+            text-decoration: dotted underline;
+            display: inline-block;
+            color: rgba(230, 230, 230, 1);
+
+        }
+
+        .news-card .news-details .date {
+            display: inline-block;
+            color: rgba(230, 230, 230, 1);
+        }
+
+        .news-card .news-details ul li {
+            display: inline-block;
+            color: black;
+        }
+
+
+        .news-card .description {
+            padding: 1rem;
+            background: var(--color-white);
+            position: relative;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+
+        .news-card .description h2 {
+            line-height: 1.6;
+            margin: 0;
+            font-size: 1.7rem;
+        }
+
+        .news-card .description h3 {
+            font-size: 1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: var(--color-grey-dark);
+            margin-top: 5px;
+        }
+
+        .news-card .description h2,
+        .news-card .description h3,
+        .news-card .description p {
+            margin: 0;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+            line-height: 1.6;
+
+        }
+
+        .news-card .description p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .news-card p {
+            position: relative;
+            margin: 1rem 0 0;
+        }
+
+        .news-card p:first-of-type {
+            margin-top: 1.25rem;
+        }
+
+        .news-card:hover .news-details {
+            left: 0%;
+        }
+
+        .news-card .photo img {
+            width: 100%;
+            /* 使图像宽度等于容器宽度 */
+            height: 100%;
+            /* 设置图像高度与容器相同，可以根据需要调整 */
+            object-fit: cover;
+            /* 裁剪并保持宽高比填满容器 */
+            display: inline-block;
+            /* 修正 img 的默认行为，避免图片下方可能出现的额外空间 */
+        }
+
+        .news-card .description .read-more {
+            position: absolute;
+            /* 绝对定位，相对于第一个定位的父元素 */
+            bottom: 0.5rem;
+            /* 距离容器底部1rem */
+            right: 1rem;
+            /* 距离容器右侧1rem */
+        }
+
+        /* Media query for larger screens */
+        @media (min-width: 768px) {
+
+            .news-card {
+                flex-direction: row;
+                max-width: 1200px;
+                height: auto;
+            }
+
+            .news-card .meta {
+                flex: 0 0 40%;
+            }
+
+            .news-card .description {
+                flex: 0 0 60%;
+            }
+
+            .news-card .photo {
+                max-height: 100%;
+                /* 最大高度限制，確保圖片不會超出容器高度 */
+                object-fit: cover;
+                /* 填充並裁切以適應元素的大小 */
+            }
+        }
+
+        .news-pagination {
+            text-align: center;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .page-number {
+            color: #fff;
+            background-color: #8B4513;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            line-height: 30px;
+            margin: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .page-number:hover {
+            background-color: #654321;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <!--漢堡選單按鈕-->
+        <input type="checkbox" name="" id="menu-control" />
+
+        <div class="header">
+            <h2 class="logo">
+                <a href="index.html">
+                    <img src="playone/icon/PlayOneLOGO.svg" alt="" />
+                </a>
+            </h2>
+            <!--漢堡選單 點選 label 標籤觸發上面的 checkbox -->
+            <label for="menu-control" class="menu-btn">
+                <span></span>
+            </label>
+            <nav class="navbar">
+                <div class="nav-links">
+                    <!-- 這裡放置其他導航連結 -->
+                    <a href="index.html">首頁</a>
+                    <a href="about-us.html">關於我們</a>
+                    <a href="news.html">最新消息</a>
+                    <a href="ichiban.html">一番賞</a>
+                    <a href="contact-us.html">聯繫客服</a>
+                </div>
+                <div class="nav-buttons">
+                    <!-- 這裡放置動作按鈕 -->
+                    <button class="signup-btn"><a href="register.html">註冊</a></button>
+                    <button class="login"><a href="login.html">登入</a></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="news-title">
+            <h2>最新消息</h2>
+        </div>
+        <section class="news">
+            <div class="news-card">
+                <div class="meta">
+                    <div class="photo">
+                        <img src="/playone/chiikawa Ramen/chiikawa.jpg" alt="">
+                    </div>
+                    <ul class="news-details">
+                        <li class="news-label"><a href="#">【一番賞】</a></li>
+                        <li class="date">2024.03.17</li>
+
+                    </ul>
+                </div>
+                <div class="description">
+                    <h2>吉伊卡哇一番賞 拉麵時光~</h2>
+                    <h3>CHIIKAWA</h3>
+                    <p>BANDAI SPIRITS的超受歡迎的「一番賞」將推出《吉伊卡哇》主題的新商品，名為「吉伊卡哇～大家一起吃拉麵～」。每抽價格為750日圓，預計在2024年9月下旬開始。這次的獎品包括各種級別，視覺上結合了吉伊卡哇與拉麵的元素。最吸引人的是充滿可愛的麵條計時器，讓吉伊卡哇與朋友們幫忙為你的麵條硬度把關！再者，角色模型可以用來放置各種物品，極具裝飾性。
+                    </p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="meta">
+                    <div class="photo">
+                        <img src="/playone/doraemon/doraemon banner.jpg" alt="">
+                    </div>
+                    <ul class="news-details">
+                        <li class="news-label"><a href="#">【一番賞】</a></li>
+                        <li class="date">2024.03.17</li>
+
+                    </ul>
+                </div>
+                <div class="description">
+                    <h2>哆啦 A 夢一番賞 秘密道具~</h2>
+                    <h3>DORAEMON</h3>
+                    <p>Bandai
+                        SPIRITS公司的「一番賞」將推出《哆啦A夢》主題的新商品「哆啦A夢～好多的秘密道具～」。參考售價為每抽700日圓，將在2024年6月22日開始。此次主題以哆啦A夢百寶袋的各類秘密道具為獎品，分為A到F、最後一賞與雙重中獎賞等級別。從搶先公開的插圖來看，著名的秘密道具如時光布、助興樂團、樵夫的泉水等都將出現，讓人相當期待這些道具會以何種形式變成周邊商品！
+                    </p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="meta">
+                    <div class="photo">
+                        <img src="/playone/Jujutsu Kaisen_3/Banner.jpg" alt="">
+                    </div>
+                    <ul class="news-details">
+                        <li class="news-label"><a href="#">【一番賞】</a></li>
+                        <li class="date">2024.02.28</li>
+
+                    </ul>
+                </div>
+                <div class="description">
+                    <h2>咒術迴戰一番賞 懐玉・玉折～參～</h2>
+                    <h3>JUJUTSU KAISEN</h3>
+                    <p>BANDAI
+                        SPIRITS公司的超人氣「一番賞」系列將在2024年6月推出《咒術迴戰》的最新續作「懐玉・玉折～參～」，每次抽獎的參考價格為700日圓。本次系列以《咒術迴戰》第二季為主題，提前公開了兩款角色模型：D獎五條悟和穿著黑色便服的E獎夏油傑。雖然兩人以簡單的站姿呈現，但卻散發出重要的氛圍。更多精彩的商品訊息將陸續公佈。
+                    </p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="meta">
+                    <div class="photo">
+                        <img src="/playone/one piece the new king/banner.jpg" alt="">
+                    </div>
+                    <ul class="news-details">
+                        <li class="news-label"><a href="#">【一番賞】</a></li>
+                        <li class="date">2024.01.19</li>
+                    </ul>
+                </div>
+                <div class="description">
+                    <h2>航海王一番賞 新四皇熱烈登場！</h2>
+                    <h3>MASTERLISE EXPIECE系列</h3>
+                    <p>BANDAI SPIRITS 最新一番賞系列《航海王 新四皇》熱烈登場！傑克、黑鬍子、魯夫、巴其，魄力十足地展現於MASTERLISE EXPIECE系列。每抽 790 日圓，2024 年 01
+                        月開抽。A~I
+                        賞+最後獎等豐富獎品，包括精緻塑造的傑克、馬歇爾·D·汀奇、魯夫、小丑巴其等，還有托特包、毛巾收藏、資料夾貼紙套組、橡膠收藏等。</p>
+                    <p class="read-more">
+                        <a href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <nav class="news-pagination">
+                <a href="#" class="page-number">1</a>
+                <a href="#" class="page-number">2</a>
+                <a href="#" class="page-number">3</a>
+                <a href="#" class="page-number">4</a>
+            </nav>
+        </section>
+    </main>
+
+</body>
+<footer>
+    <section class="footer-section">
+        <footer class="footer-distributed">
+            <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up'></i></div>
+            <div class="footer-left">
+                <h2 class="footer-logo">
+                    <a href="index.html">
+                        <img src="../playone/icon/PlayOneLogo.svg" alt="" />
+                    </a>
+                </h2>
+            </div>
+
+            <div class="footer-center">
+                <div class="footer-contact-info">
+                    <p class="element-TEL">
+                        地址：玩一番股份有限公司 桃園市中壢區復興路46號9樓<br>
+                        TEL: 02-222-5978 ｜ FAX: 02-666-5978<br>
+                        copyright©2024PLAY ONE 玩一番 . All rights reserved.<br>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-reference-info">
+                <div class="text-wrapper-1">參考資料來源: | Pinterest:https://www.pinterest.com/</div>
+                <div class="text-wrapper-2">
+                    本網站為緯育TibaMe前端工程師班第xx期學員專題作品，本平台僅供學習、展示之用。
+                </div>
+            </div>
+        </footer>
+
+    </section>
+</footer>
+<script src="playone.js"></script>
+
+</html>

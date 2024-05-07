@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 貓頭鷹輪播 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    </link>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    </link>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</head>
+<style>
+    .owl-carousel-container {
+    width: auto;
+    padding: 80px;
+    background-image: url('playone/arches.png');
+    background-color: #f7f0e7; /* 添加适当的背景颜色作为图案的底色 */
+    }
+
+    .owl-item {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        /* 使项目水平居中 */
+    }
+
+
+    .item {
+        overflow: hidden;
+        width: 525px;
+        height: 300px;
+        background: #4dc7a0;
+        display: flex;
+    justify-content: center;
+    align-items: center; /* 使图像在项目容器中垂直居中 */
+    }
+
+    .owl-carousel .item {
+        transition: transform 0.3s ease;
+    }
+
+    .owl-carousel .item:hover {
+        transform: rotate(-5deg);
+    }
+    .owl-carousel .item img {
+    max-width: none; /* 移除最大宽度限制 */
+    min-width: 100%; /* 最小宽度为容器的100%，确保图像至少和容器一样宽 */
+    min-height: 100%; /* 最小高度为容器的100%，确保图像至少和容器一样高 */
+    object-fit: cover; /* 裁剪图片以完全覆盖容器，保持图片的比例 */
+    object-position: center; /* 确保图像在容器中居中，所以图像的中心部分会被显示 */
+}
+</style>
+
+<body>
+    <section class="owl-carousel-container">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="playone/HUNTER×HUNTER- DAY OF DEPARTURE/Day Of Departure.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="playone/BLUE LOCK -Take Up Arms Striker!!-/BLUE LOCK -Take Up Arms Striker!!-.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="playone/HUNTER×HUNTER _ REVENGE OF SCARLET/revenge of scarlet banner.jpg" alt="">
+
+            </div>
+            <div class="item">
+                <img src="playone/JOJO_DIAMOND IS UNBREAKABLE/banner.jpg" alt="">
+
+            </div>
+            <div class="item">
+                <img src="playone/My Hero Academia/banner.jpg" alt="">
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(".owl-carousel").owlCarousel({
+            loop: true, // 循环播放
+            margin: 10, // 外距 10px
+            nav: false, // 不显示左右导航箭头
+            dots: false, // 不显示点点
+            autoplay:true,
+            autoplayTimeout: 3000, // 设置自动播放的停顿时间为3000毫秒（3秒）
+            autoplayHoverPause: true, // 鼠标悬停时暂停自动播放
+            stagePadding: 50, // 在carousel左右边缘添加padding。在responsive配置失效（即在视口尺寸小于768px）时可以提供类似的效果。
+           items: 2, // 应只在窗口宽度大于768px时展示多个项，这条规则将应用于所有窗口大小
+        });
+        $(document).ready(function(){
+        $(".item").hover(
+            function() {
+                $(this).css("background-color", "#f0f0f0");
+            }, function() {
+                $(this).css("background-color", "#4dc7a0");
+            }
+        );
+    });
+    </script>
+</body>
+
+</html>

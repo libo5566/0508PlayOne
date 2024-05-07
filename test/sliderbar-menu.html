@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu-control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+
+        /* Checkbox checked label, menu appears */
+
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: #9E9E9E;
+            padding: 0 10px;
+            /* 調整內部元素與容器的間隔，但這會影響邊距對齊 */
+            box-sizing: border-box;
+            /* 確保內部邊距和邊框不會超出設定的寬度 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            padding-top: 80px;
+            /* 給body添加一點間隔，避免內容被header遮擋 */
+        }
+
+        .logo {
+            flex: 0 0 80px;
+            /* 增加基本大小 */
+            margin: 0 40px 0 20px;
+            /* 新增左邊距，同時保留右邊的現有值 */
+        }
+
+        .logo a {
+            height: auto;
+            /* 使logo的高度自动调整 */
+        }
+
+        .logo img {
+            width: 100%;
+            /* 让图片填充整个链接容器 */
+            height: auto;
+            /* 維持圖片比例 */
+        }
+
+        .menu-btn {
+            display: none;
+            position: absolute;
+            align-items: center;
+            right: 10px;
+            width: 40px;
+            height: 25px;
+            background-color: transparent;
+            /* 設置為透明背景 */
+            cursor: pointer;
+            z-index: 3;
+            /* 确保在navbar之上 */
+        }
+
+        .menu-btn span,
+        .menu-btn::before,
+        .menu-btn::after {
+            content: '';
+            display: block;
+            background-color: #000;
+            height: 3px;
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        /* 当 checkbox 被选中时，改变条形菜单的样式变为关闭(x)图标 */
+        #menu-control:checked~.header .menu-btn::before {
+            transform: rotate(45deg) translate(5px, 6.8px);
+        }
+
+        #menu-control:checked~.header .menu-btn::after {
+            transform: rotate(-45deg) translate(5px, -6.8px);
+        }
+
+        #menu-control:checked~.header .menu-btn span {
+            opacity: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 10px;
+            transition: 0.5s;
+            box-sizing: border-box;
+            /* Smooth transition for menu animation */
+        }
+
+        .nav-links {
+            flex: 1;
+            /* 允許這部分延展，填充額外的空間 */
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-buttons {
+            gap: 1.6vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .nav-buttons button {
+            min-width: 50px;
+            max-width: 100px;
+            text-align: center;
+            background: transparent;
+            border: 0.1vw solid #000;
+            padding: 0.5vw 1vw;
+            cursor: pointer;
+            font-size: 1.2vw;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        .nav-buttons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            text-decoration: none;
+            color: inherit;
+            /* 這讓文字保持原本的顏色 */
+        }
+
+
+        .navbar a {
+            display: block;
+            text-decoration: none;
+            color: #000;
+            padding: 0.5vw 1vw;
+            border-bottom: none;
+        }
+
+        .nav-links a,
+        .nav-buttons button {
+            font-size: 1.6vw;
+            white-space: nowrap;
+            text-align: left;
+            width: 100%;
+            padding: 1.2vw 1.5vw;
+            border-bottom: none;
+        }
+
+        .nav-buttons button {
+            border: 0.1vw solid #000;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        .nav-links a,
+        .nav-buttons button a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-buttons button a:hover {
+            color: #007bff;
+        }
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        /* 手機板 */
+        @media (max-width: 767px) {
+            .navbar {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                width: 100%;
+                height: 100vh;
+                overflow-y: auto;
+                background-color: rgba(236, 236, 236, 0.5);
+                /* 深藍色文字 */
+                position: absolute;
+                top: 80px;
+                right: -100%;
+                transition: right 0.5s;
+                box-sizing: border-box;
+                padding-top: 0;
+            }
+
+            #menu-control:checked~.header .navbar {
+                right: 0;
+                /* 導覽列滑入 */
+            }
+
+            .menu-btn {
+                display: inline-block;
+                align-items: center;
+                text-align: center;
+            }
+
+            .logo {
+                flex: 0 0 50px;
+                margin: 0 10px 0 10px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 4vw;
+            }
+
+            .nav-links a {
+                align-items: flex-start;
+                text-align: center;
+                padding: 5vw;
+                font-size: 3vw;
+            }
+
+            .nav-buttons {
+                justify-content: center;
+                width: 100%;
+                padding-top: 4vw;
+                box-sizing: border-box;
+                white-space: normal;
+                font-size: 2vw;
+                gap: 4vw;
+            }
+
+            .nav-buttons a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                box-sizing: border-box;
+                white-space: normal;
+                font-size: 2vw;
+            }
+
+            .nav-buttons button {
+                padding: 2vw 1vw;
+                box-sizing: border-box;
+                width: 50%;
+                /* 使按鈕滿寬 */
+            }
+
+
+        }
+
+        /* 桌面 */
+        @media screen and (min-width: 768px) {
+
+            .header {
+                max-width: 1920px;
+                margin-left: auto;
+                /* 左邊距自動調整 */
+                margin-right: auto;
+                /* 右邊距自動調整 */
+                justify-content: flex-start;
+                padding: 0 10px;
+            }
+
+            .navbar {
+                padding: 0 10px;
+            }
+
+            .logo {
+                margin-right: 20px;
+            }
+
+            .nav-links,
+            .nav-buttons {
+                width: 100%;
+            }
+
+            .nav-links a,
+            .nav-buttons button {
+                margin-right: 1vw;
+                flex-grow: 0;
+            }
+
+            .nav-links a:last-child,
+            .nav-buttons button:last-child {
+                margin-right: 0;
+            }
+
+            .nav-buttons button {
+                font-size: 1.2vw;
+                white-space: nowrap;
+                background-color: #f0f0f0;
+                border: 1px solid #ccc;
+                color: #333;
+                padding: 10px 20px;
+                transition: box-shadow 0.3s, background-color 0.3s;
+            }
+
+            .nav-buttons button:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                background-color: #e8e8e8;
+            }
+
+            .nav-buttons button a {
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!--漢堡選單按鈕-->
+        <input type="checkbox" name="" id="menu-control" />
+
+        <div class="header">
+            <h2 class="logo">
+                <a href="">
+                    <img src="../playone/icon/PlayOneLogo.svg" alt="" />
+                </a>
+            </h2>
+            <!--漢堡選單 點選 label 標籤觸發上面的 checkbox -->
+            <label for="menu-control" class="menu-btn">
+                <span></span>
+            </label>
+            <nav class="navbar">
+                <div class="nav-links">
+                    <!-- 這裡放置其他導航連結 -->
+                    <a href="">首頁</a>
+                    <a href="">關於我們</a>
+                    <a href="">最新消息</a>
+                    <a href="">一番賞</a>
+                    <a href="">盲盒</a>
+                    <a href="">聯繫客服</a>
+                </div>
+                <div class="nav-buttons">
+                    <!-- 這裡放置動作按鈕 -->
+                    <button class="signup-btn"><a href="#">註冊</a></button>
+                    <button class="login"><a href="#">登入</a></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+</body>
+</html>

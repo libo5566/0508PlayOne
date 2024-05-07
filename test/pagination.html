@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pagination {
+  text-align: center;
+  margin: 20px 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.page-number {
+  color: #fff;
+  background-color: #8B4513;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  line-height: 30px;
+  margin: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.page-number:hover {
+  background-color: #654321;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="pagination">
+        <a href="#" class="page-number">1</a>
+        <a href="#" class="page-number">2</a>
+        <a href="#" class="page-number">3</a>
+        <a href="#" class="page-number">4</a>
+        <!-- 以此类推，根据需要增加 -->
+      </nav>
+
+      <nav class="pagination movie-ticket">
+        <a href="#" class="page-number">1</a>
+        <a href="#" class="page-number active">2</a>
+        <a href="#" class="page-number">3</a>
+        <!-- 以此类推 -->
+      </nav>
+</body>
+</html>

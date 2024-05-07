@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們</title>
+    <!-- 重設css -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- 貓頭鷹輪播 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+/* 每一区块的上下间距 */
+section {
+    padding-top: 30px; /* 上方间距 */
+    padding-bottom: 30px; /* 下方间距 */
+}
+
+/* 联系我们区块的样式设置 */
+.contact-us {
+    max-width: 600px; /* 最大宽度设置为600px */
+    margin: 0 auto; /* 水平居中显示 */
+    padding: 20px; /* 内边距 */
+    border-radius: 8px; /* 圆角边框 */
+    background-color: #e1d9c0; /* 背景颜色 */
+    color: #835c3b; /* 文字颜色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 盒子阴影效果 */
+}
+
+/* 联系客服标题的样式设置 */
+.contact-us-title {
+    font-size: 24px; /* 字型大小 */
+    text-align: center; /* 居中对齐 */
+    margin-bottom: 20px; /* 下方间距 */
+    padding: 5px 0; /* 上下内边距 */
+    color: #835c3b; /* 文字颜色 */
+    border-bottom: 2px solid #835c3b; /* 下方边框 */
+}
+
+/* 表格组容器的样式设置 */
+.form-group {
+    display: flex; /* 启用Flex布局 */
+    flex-direction: column; /* 纵向排列 */
+    gap: 10px; /* 元素间距 */
+}
+
+/* 表格组内部div的样式 */
+.form-group div {
+    display: flex; /* 启用Flex布局 */
+    flex-direction: column; /* 纵向排列 */
+    margin-bottom: 10px; /* 下方间距 */
+}
+
+/* 输入框及选择框的样式 */
+.input-field,
+.select {
+    padding: 12px 15px; /* 内边距增加以提高填写舒适度 */
+    border: 1px solid #ccc; /* 边框设置使输入区域更清晰 */
+    background-color: #f8f4e3; /* 背景颜色 */
+    color: #835c3b; /* 文字颜色 */
+    border-radius: 5px; /* 圆角边框 */
+}
+
+/* 输入框及选择框获得焦点时的样式 */
+.input-field:focus,
+.select:focus {
+    border-color: #835c3b; /* 焦点时边框颜色 */
+    outline: none; /* 移除默认的焦点框 */
+    box-shadow: 0 0 5px rgba(131, 92, 59, 0.5); /* 添加轻微发光效果 */
+}
+
+/* 标签的样式 */
+.label {
+    font-weight: bold; /* 字体加粗 */
+    margin-bottom: 5px; /* 与输入框间增加一些空间 */
+    color: #835c3b; /* 文字颜色 */
+    display: block; /* 单独占一行 */
+}
+
+/* 选择菜单的样式 */
+.select {
+    padding: 10px; /* 内边距 */
+    border: 2px solid #989898; /* 边框 */
+    border-radius: 4px; /* 圆角边框 */
+    background-color: white; /* 背景颜色 */
+    font-size: 16px; /* 字型大小 */
+}
+
+/* 问题与意见区块的边距设置 */
+.form-group .option {
+    margin-top: 20px; /* 上方间距 */
+    margin-bottom: 10px; /* 下方间距 */
+}
+
+/* 问题与意见标签的下方间距 */
+.form-group .option label {
+    margin-bottom: 20px;
+}
+
+/* 隐私政策同意复选框的样式 */
+.agree-text {
+    margin-right: 5px;
+    cursor: pointer;
+    color: #835c3b; /* 文字颜色调整 */
+}
+
+.agree {
+    margin-right: 5px; /* 右侧间距 */
+}
+
+/* 提交按钮的样式 */
+.con-btn-group {
+    display: flex; /* 启用Flex布局 */
+    flex-direction: column; /* 纵向排列 */
+    gap: 10px; /* 按钮间距 */
+}
+
+.con-btn {
+    padding: 15px 30px; /* 内边距 */
+    text-align: center; /* 居中对齐 */
+    border-radius: 5px; /* 圆角边框 */
+    cursor: pointer; /* 游标指针 */
+    transition: all 0.3s ease-in-out; /* 过渡效果 */
+    border: 2px solid #835c3b; /* 边框 */
+    background-color: transparent; /* 透明背景 */
+    color: #835c3b; /* 文字颜色 */
+    margin-top: 10px; /* 上方间距 */
+}
+
+.con-btn:hover {
+    background-color: #835c3b; /* 悬停时背景色 */
+    color: #f8f4e3; /* 悬停时文字颜色 */
+}
+
+a.con-btn-link {
+    text-decoration: none !important;
+    color: #f8f4e3; 
+    display: block;
+}
+
+/* 媒体查询 - 响应式设计 */
+@media (max-width: 768px) {
+    section {
+        padding-top: 20px; /* 上方间距缩小 */
+        padding-bottom: 20px; /* 下方间距缩小 */
+    }
+
+    .contact-us {
+        padding: 15px; /* 内边距缩小 */
+        margin: 20px; /* 外边距增加 */
+        background-color: #e1d9c0; /* 背景颜色调整 */
+    }
+
+    .form-group {
+        flex-direction: column; /* 使元素纵向排列 */
+    }
+
+    .con-btn-group {
+        flex-direction: column; /* 修改为垂直布局 */
+        gap: 10px; /* 按钮之间的间隙 */
+    }
+
+    .con-btn {
+        width: auto; /* 按钮宽度调整为自动 */
+        padding: 10px 20px; /* 内边距调整 */
+    }
+
+    .con-btn a {
+        color: #835c3b; /* 提交按钮中文本颜色调整 */
+
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <!--漢堡選單按鈕-->
+        <input type="checkbox" name="" id="menu-control" />
+
+        <div class="header">
+            <h2 class="logo">
+                <a href="index.html">
+                    <img src="playone/icon/PlayOneLOGO.svg" alt="" />
+                </a>
+            </h2>
+            <!--漢堡選單 點選 label 標籤觸發上面的 checkbox -->
+            <label for="menu-control" class="menu-btn">
+                <span></span>
+            </label>
+            <nav class="navbar">
+                <div class="nav-links">
+                    <!-- 這裡放置其他導航連結 -->
+                    <a href="index.html">首頁</a>
+                    <a href="about-us.html">關於我們</a>
+                    <a href="news.html">最新消息</a>
+                    <a href="ichiban.html">一番賞</a>
+                    <a href="contact-us.html">聯繫客服</a>
+                </div>
+                <div class="nav-buttons">
+                    <!-- 這裡放置動作按鈕 -->
+                    <button class="signup-btn"><a href="register.html">註冊</a></button>
+                    <button class="login"><a href="login.html">登入</a></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="contact-us">
+            <div class="contact-us-title"><span>聯絡客服</span></div>
+            <div class="form-group">
+                <!-- ----------表格---------- -->
+                <div>
+                    <div class="name"><label for="">姓名<br></label></div>
+                    <div class="name"><input type="name" class="input-field"></div>
+                </div>
+                <!-- ------------------------ -->
+                <div>
+                    <div class="tel"><label for="">連絡電話<br></label></div>
+                    <div class="tel"><input type="tel" class="input-field"></div>
+                </div>
+                <!-- ------------------------ -->
+                <div>
+                    <div class="email"><label for="">電子信箱<br></label></div>
+                    <div class="email"><input type="email" class="input-field"></div>
+                </div>
+                <!-- ------------------------ -->
+                <div class="question"><label for="">詢問主題<br></label></div>
+                <select name="" class="input-field">
+                    <option value="" class="pull
+                    ">詢問主題</option>
+                    <option value="" class="pull
+                    ">帳號安全</option>
+                    <option value="" class="pull
+                    ">儲值相關</option>
+                    <option value="" class="pull
+                    ">訂單與付款</option>
+                    <option value="" class="pull
+                    ">退貨/換貨</option>
+                    <option value="" class="pull
+                    ">其他</option>
+                </select>
+                <div class="option">
+                    <label for="">問題與意見<br>
+                    </label>
+                    <textarea class="input-field" placeholder="請寫下您的意見..."></textarea>
+                </div>
+                <label for="agreeCheckbox" class="agreetext">
+                    <input type="checkbox" id="agreeCheckbox" class="agree-checkbox">
+                    <span class="agree-text">同意本網站使用個人資料</span>
+                </label>
+                <!-- ----------按鈕---------- -->
+                <div class="con-btn-group">
+                    <a href="" class="con-btn-link">
+                        <div class="con-btn">
+                            <span>重新填寫</span>
+                        </div>
+                    </a>
+                    <a href=""class="con-btn-link">
+                        <div class="con-btn">
+                            <span>確認送出</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<footer>
+    <section class="footer-section">
+        <footer class="footer-distributed">
+            <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up'></i></div>
+            <div class="footer-left">
+                <h2 class="footer-logo">
+                    <a href="index.html">
+                        <img src="../playone/icon/PlayOneLogo.svg" alt="" />
+                    </a>
+                </h2>
+            </div>
+
+            <div class="footer-center">
+                <div class="footer-contact-info">
+                    <p class="element-TEL">
+                        地址：玩一番股份有限公司 桃園市中壢區復興路46號9樓<br>
+                        TEL: 02-222-5978 ｜ FAX: 02-666-5978<br>
+                        copyright©2024PLAY ONE 玩一番 . All rights reserved.<br>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-reference-info">
+                <div class="text-wrapper-1">參考資料來源: | Pinterest:https://www.pinterest.com/</div>
+                <div class="text-wrapper-2">
+                    本網站為緯育TibaMe前端工程師班第xx期學員專題作品，本平台僅供學習、展示之用。
+                </div>
+            </div>
+        </footer>
+
+    </section>
+</footer>
+<script src="playone.js"></script>
+
+</html>

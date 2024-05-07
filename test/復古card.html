@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 主要颜色和字体 */
+:root {
+    --background-color: #F4D1AE; /* 裸粉色背景 */
+    --primary-color: #3D2B1F; /* 深褐色文字 */
+    --secondary-color: #8A6552; /* 深卡其布颜色 */
+    --accent-color: #EABF9F; /* 浅棕色点缀 */
+    --font-family: 'Comic Sans MS', cursive, sans-serif; /* 使用更接近手绘的字体 */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+/* 更新UI元素风格 */
+.main-title, .menu-button, .more-button, .item-description, .promo-label {
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    padding: 5px 10px;
+    text-shadow: 1px 1px var(--primary-color);
+}
+
+.item-card {
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.menu-content a {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* 确保图像呈现适当的圆角边框 */
+.item-image-container {
+  width: 100%; /* 设定宽度为100% */
+  overflow: hidden; /* 隐藏溢出部分 */
+}
+
+.item-image-container img {
+  width: 100%;  /* 设定图片宽度为100%，使其充满容器 */
+  height: auto; /* 高度自动调整以维持宽高比 */
+  display: block; /* 块级元素，消除图片底部的空隙 */
+}
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h2 class="main-title">火熱開抽中</h2>
+        <div class="menu-dropdown">
+            <button class="menu-button">popular</button>
+            <div class="menu-content">
+                <a href="#">航海王</a>
+                <a href="#">火影忍者</a>
+                <a href="#">獵人</a>
+            </div>
+        </div>
+        <div class="item-gallery">
+            <!-- 卡片 1 开始 -->
+            <div class="item-card" data-url="onepiece.html">
+                <div class="promo-label">多抽優惠!</div>
+                <div class="item-image-container">
+                    <img src="../playone/BLUE LOCK -Take Up Arms Striker!!-/BLUE LOCK -Take Up Arms Striker!!-.jpg" alt="商品圖片">
+                </div>
+                <div class="item-description">
+                    <div class="description-detail">產品名: ONE PIECE航海王-新四皇</div>
+                    <div class="description-detail">店家名: 差低玩具</div>
+                    <div class="description-detail">價格: 1抽305元</div>
+                </div>
+            </div>
+            <!-- 卡片 1 结束 -->
+            <!-- 其他卡片以相同方式添加 -->
+        </div>
+        <button class="more-button" onclick="window.location.href='Ichiban.html'">查看更多</button>
+    </div>
+    
+</body>
+</html>

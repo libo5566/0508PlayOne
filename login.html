@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們</title>
+    <!-- 重設css -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- 貓頭鷹輪播 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        .login-section {
+            margin: 0;
+            margin-top: 25px;
+            padding: 0;
+            font-family: 'Bitter', serif;
+            /* background-color: #FDF5E6; 蒼白的背景色 */
+            color: #704214;
+            /* 皮革棕 */
+        }
+
+        a {
+            color: inherit;
+            /* 鏈接保持和文字一樣的顏色 */
+            text-decoration: none;
+            /* 去掉下劃線 */
+        }
+
+        /* 復古風格登入區段設定 */
+        .login-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url('your-retro-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 表單容器 */
+        .login-container {
+            background-color: #FBF0D9;
+            /* 紙張白色背景 */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 90%;
+        }
+
+        /* 標題設定 */
+        .login-title {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        /* 表單元素樣式 */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #DECBA4;
+            /* 橡子棕 */
+            border-radius: 5px;
+            background-color: #FFFBEA;
+            /* 橙皮黃 */
+            color: #704214;
+            /* 皮革棕 */
+            font-size: 1em;
+        }
+
+        /* 按鈕樣式 */
+        .login-btn-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 垂直置中 */
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .social-icon {
+            margin: 0 10px;
+            font-size: 24px;
+            /* 或其它適合的大小 */
+        }
+
+        .forget,
+        .alternate-login {
+            text-align: center;
+            /* 置中文字 */
+            margin-bottom: 10px;
+            /* 如果需要的話 */
+        }
+
+        .login-btn-group-btn {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #8B4513;
+            /* 馬鞍棕 */
+            color: #FFFFFF;
+            /* 純潔白 */
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* 利用 :hover 和 :focus 提升用戶互動體驗 */
+        .login-btn-group-btn:hover,
+        .login-btn-group-btn:focus {
+            background-color: #A0522D;
+            /* 世界棕 */
+        }
+
+        /* 響應式布局 */
+        @media (max-width: 768px) {
+            .login-container {
+                width: calc(100% - 100px);
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-title {
+                font-size: 1.5em;
+            }
+
+            .login-container {
+                padding: 20px;
+            }
+
+            .login-btn-group-btn {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!--漢堡選單按鈕-->
+        <input type="checkbox" name="" id="menu-control" />
+
+        <div class="header">
+            <h2 class="logo">
+                <a href="index.html">
+                    <img src="playone/icon/PlayOneLOGO.svg" alt="" />
+                </a>
+            </h2>
+            <!--漢堡選單 點選 label 標籤觸發上面的 checkbox -->
+            <label for="menu-control" class="menu-btn">
+                <span></span>
+            </label>
+            <nav class="navbar">
+                <div class="nav-links">
+                    <!-- 這裡放置其他導航連結 -->
+                    <a href="index.html">首頁</a>
+                    <a href="about-us.html">關於我們</a>
+                    <a href="news.html">最新消息</a>
+                    <a href="ichiban.html">一番賞</a>
+                    <a href="contact-us.html">聯繫客服</a>
+                </div>
+                <div class="nav-buttons">
+                    <!-- 這裡放置動作按鈕 -->
+                    <button class="signup-btn"><a href="register.html">註冊</a></button>
+                    <button class="login"><a href="login.html">登入</a></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="login-section">
+            <form class="login-container" method="post" action="#">
+                <fieldset>
+                    <legend class="login-title">會員登入</legend>
+                    <div class="form-content">
+                        <div class="account">
+                            <label for="username">會員帳號</label>
+                            <input type="text" id="username" name="username" required="">
+                        </div>
+                        <div class="password">
+                            <label for="password">會員密碼</label>
+                            <input type="password" id="password" name="password" required="">
+                        </div>
+                        <div class="check">
+                            <label for="captcha">驗證碼</label>
+                            <input type="text" id="captcha" name="captcha" required="">
+                        </div>
+                    </div>
+                    <div class="login-btn-group">
+                        <button type="submit" class="login-btn-group-btn">登入</button>
+                        <div class="orLineGroup">
+                            <hr class="orLine">
+                            <span class="or">或</span>
+                            <hr class="orLine">
+                        </div>
+                        <div class="social-login">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-line"></i></a>
+                        </div>
+                        <a href="#" class="alternate-login">使用其他方式登入</a>
+                    </div>
+                    <div class="forget">
+                        <a href="#">忘記密碼</a> | <a href="register.html">註冊</a>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+<footer>
+    <section class="footer-section">
+        <footer class="footer-distributed">
+            <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up'></i></div>
+            <div class="footer-left">
+                <h2 class="footer-logo">
+                    <a href="index.html">
+                        <img src="../playone/icon/PlayOneLogo.svg" alt="" />
+                    </a>
+                </h2>
+            </div>
+
+            <div class="footer-center">
+                <div class="footer-contact-info">
+                    <p class="element-TEL">
+                        地址：玩一番股份有限公司 桃園市中壢區復興路46號9樓<br>
+                        TEL: 02-222-5978 ｜ FAX: 02-666-5978<br>
+                        copyright©2024PLAY ONE 玩一番 . All rights reserved.<br>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-reference-info">
+                <div class="text-wrapper-1">參考資料來源: | Pinterest:https://www.pinterest.com/</div>
+                <div class="text-wrapper-2">
+                    本網站為緯育TibaMe前端工程師班第xx期學員專題作品，本平台僅供學習、展示之用。
+                </div>
+            </div>
+        </footer>
+
+    </section>
+</footer>
+<script src="playone.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert('請填寫所有必填欄位。');
+                return false;
+            }
+
+            console.log('提交表單', { username, password });
+
+            loginForm.reset(); // 表單重置
+        });
+    });
+</script>
+
+</html>

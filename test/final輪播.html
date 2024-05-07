@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 Owl Carousel 核心样式文件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- 引入 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- 引入 Owl Carousel 脚本文件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Bangers|Lobster|Shadows+Into+Light|Pacifico|Gloria+Hallelujah|Fredericka+the+Great|Playfair+Display|Courgette&display=swap');
+
+        /* 添加手绘风格纹理 */
+        
+       
+        .owl-carousel-container {
+            max-width: 100%;
+            padding: 20px;
+            background-color: #f7f0e7;
+            
+        }
+        .owl-carousel-title {
+            color: #757575;
+            /* 选择一种柔和的复古颜色 */
+            font-size: 24px;
+            /* 根据视口宽度调整字体大小, 保持响应式 */
+            font-weight: bold;
+            letter-spacing: 1em;
+            /* 增加字母间距, 增强复古打印机文字效果 */
+            text-align: left;
+            line-height: 1.6;
+            margin: 30px auto;
+            height: auto;
+            width: 100%;
+            /* 使用最大宽度，适应容器 */
+            text-transform: uppercase;
+            display: block; 
+            margin: 0 4vw;
+        }
+
+
+        .owl-carousel .item {
+            padding: 0;
+            border: 5px solid #333;
+            box-sizing: border-box;
+            margin: 0 4vw;
+        }
+
+        .owl-carousel .item:hover {
+            animation: rubberBand 1s;
+        }
+
+        @keyframes rubberBand {
+            0% {
+                transform: scale(1);
+            }
+
+            30% {
+                transform: scaleX(1.25) scaleY(0.75);
+            }
+
+            40% {
+                transform: scaleX(0.75) scaleY(1.25);
+            }
+
+            50% {
+                transform: scaleX(1.15) scaleY(0.85);
+            }
+
+            65% {
+                transform: scaleX(0.95) scaleY(1.05);
+            }
+
+            75% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .owl-carousel .item img {
+            width: 100%;
+            object-fit: contain;
+            max-height: 50vw;
+            height: auto;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .owl-carousel .item {
+                padding: 0;
+            }
+
+            .owl-carousel-title h2 {
+                font-size: 18px;
+                /* 在较小的屏幕上进一步调大字体大小 */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <section class="owl-carousel-container">
+
+        <div class="owl-carousel-title">
+            <h2>最近熱門</h2>
+        </div>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="../playone/ DAY OF DEPARTURE/Day Of Departure.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="../playone/BLUE LOCK -Take Up Arms Striker!!-/BLUE LOCK -Take Up Arms Striker!!-.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="../playone/HUNTER×HUNTER _ REVENGE OF SCARLET/revenge of scarlet banner.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="../playone/JOJO_DICTATORAMOND IS UNBREAKABLE/banner.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="../playone/My Hero Academia/banner.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                },
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
+            });
+        });
+    </script>
+
+</body>
+
+</html>

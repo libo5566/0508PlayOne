@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動頁面</title>
+    <style>
+        .title-container {
+            position: relative;
+            width: 100%;
+            height: 30vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* 新增背景元素，將圖片和濾鏡效果放在這里 */
+        .background-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('../playone/banner2.jpg') no-repeat center center / cover;
+            z-index: 1;
+            /* 将滤镜属性应用于此处 */
+            filter: sepia(0.8) brightness(0.9) saturate(1.5);
+        }
+
+        .background-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* 修改这里的不透明度来调整暗度 */
+            z-index: 2;
+        }
+
+        .title-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            font-size: 3.6vw;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .explore-button {
+            padding: 10px 25px;
+            font-size: 1.2vw;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: #e85a4f;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 3px 3px 0 #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            transform: skew(-5deg);
+            z-index: 2;
+
+            text-decoration: none;
+        }
+
+        .explore-button:hover {
+            background-color: #d0493b;
+            box-shadow: 5px 5px 0 #1c1b18;
+            animation: rubberBand 0.5s;
+        }
+
+        .explore-button:active {
+            box-shadow: 1px 1px 0 #1c1b18;
+        }
+
+        @keyframes rubberBand {
+            0% {
+                transform: scaleX(1);
+            }
+
+            30% {
+                transform: scaleX(1.25);
+            }
+
+            40% {
+                transform: scaleX(0.75);
+            }
+
+            50% {
+                transform: scaleX(1.15);
+            }
+
+            65% {
+                transform: scaleX(0.95);
+            }
+
+            75% {
+                transform: scaleX(1.05);
+            }
+
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .title-content {
+                font-size: 24px;
+                /* 改变标题的字体大小为24px */
+            }
+
+            .explore-button {
+                padding: 5px 10px;
+                /* 可以根据需要调整按钮内边距来更好的适应小屏幕 */
+                font-size: 12px;
+                /* 改变按钮的字体大小为16px */
+                transform: none;
+                /* 可能还需要移除按钮的倾斜效果，因为在小屏幕上阅读倾斜的文本会更加困难 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-container">
+        <div class="background-image"></div> <!-- 添加背景元素 -->
+        <div class="title-content">最新、最快、最透明的抽獎體驗!</div>
+        <a href="#" class="explore-button">立即探索</a>
+    </div>
+</body>
+
+</html>

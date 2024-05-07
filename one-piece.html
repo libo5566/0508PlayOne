@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們</title>
+    <!-- 重設css -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- 貓頭鷹輪播 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        /* 主區塊的 CSS 設定 */
+        main {
+            display: flex;
+            /* 採用彈性排列方式 */
+            flex-direction: column;
+            /* 子元件為垂直排列 */
+            align-items: center;
+            /* 子元件在交叉軸上居中對齊 */
+        }
+
+        /* 產品區塊的 CSS 設定 */
+        .product-section {
+            max-width: 900px;
+            /* 產品區塊最大寬度 */
+            margin: 20px;
+            /* 產品區塊外側邊距 */
+            padding: 15px;
+            /* 產品區塊內側邊距 */
+            background-color: #fff;
+            /* 產品區塊背景顏色設定 */
+            border: 2px solid #835c3b;
+            /* 產品區塊邊框樣式設定 */
+            border-radius: 8px;
+            /* 產品區塊邊框角半徑設定 */
+        }
+
+        /* 產品標題圖片的 CSS 設定 */
+        .product-header img {
+            width: 100%;
+            /* 圖片寬度為區塊寬度 */
+            border-bottom: 2px solid #000;
+            /* 圖片下方設定黑色邊框 */
+            border-radius: 5px;
+        }
+
+        /* 產品標題的 CSS 設定 */
+        .product-title {
+            text-align: center;
+            /* 標題文字居中對齊 */
+            font-size: 1.8em;
+            /* 標題文字字體大小設定 */
+            margin-top: 0.5em;
+            /* 標題上方外側邊距設定 */
+            margin-bottom: 0.5em;
+            /* 標題下方外側邊距設定 */
+            color: #835c3b;
+        }
+
+        /* 產品細節與獎品區塊的 CSS 設定 */
+        .product-details,
+        .prizes {
+            border-top: 2px solid #835c3b;
+            /* 區塊頂部設定黑色邊框 */
+            padding-top: 1em;
+            /* 區塊內側頂部邊距設定 */
+            margin-top: 1em;
+            /* 區塊外側頂部邊距設定 */
+        }
+
+        .product-details .info-bar {
+            display: flex;
+            /* 使用 flex 布局 */
+            justify-content: space-between;
+            /* space-between 使得 shop-name 和 price 之间有最大的空隙 */
+        }
+
+        .product-details p {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        /* 注意事項 */
+
+        .info-section {
+            text-align: center;
+            background-color: #f4e7d3;
+            padding: 2em;
+            margin-top: 2em;
+            margin-bottom: 2em;
+            border-radius: 15px;
+            border: 2px solid #000;
+        }
+
+        .info-section h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .info-section p {
+            line-height: 1.6;
+            font-size: 1em;
+            color: #5c4033;
+            text-align: left;
+        }
+
+
+        /* 購買選項的 CSS 設定 */
+        .purchase-options ul {
+            list-style-type: none;
+            /* 區塊內不顯示項目符號 */
+            padding: 0;
+            /* 區塊內側邊框設定為 0 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .purchase-options li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 1em 0;
+        }
+
+        .prize-details {
+            white-space: nowrap;
+            overflow: auto;
+            max-width: 100%;
+        }
+
+        .remaining-draws {
+            margin-bottom: 20px;
+        }
+
+        .purchase-options button {
+            background-color: #835c3b;
+            /* 按鈕背景顏色設定 */
+            color: #e1d9c0;
+            border: 1px solid #e1d9c0;
+            font-size: 1em;
+            /* 按鈕字體大小設定 */
+            padding: 10px 20px;
+            /* 按鈕內側邊距設定 */
+            border: none;
+            /* 按鈕無邊框 */
+            border-radius: 5px;
+            cursor: pointer;
+            /* 滑鼠懸浮時會變為手指形狀 */
+            transition: background-color 0.3s;
+            /* 按鈕背景顏色變換速度設定 */
+        }
+
+        .purchase-options button:hover {
+            background-color: #e1d9c0;
+            /* 滑鼠懸浮時按鈕背景顏色設定 */
+            color: #835c3b;
+        }
+
+        /* 奬品卡片的 CSS 設定 */
+        .prizes {
+            display: flex;
+            /* 賞品區容器設定為 flex 佈局 */
+            flex-wrap: wrap;
+            /* 如果容器寬度不足，子元件換行 */
+            justify-content: space-between;
+            /* 子元件間留有相同的空間 */
+        }
+
+        .prizes h3 {
+            width: 100%;
+        }
+
+        .prize-card {
+            flex: 1 1 calc(33.333% - 20px);
+            /* 默認一行三個卡片，寬度為父容器的1/3，間隔約20px */
+            border: 2px solid #835c3b;
+            /* 卡片邊框設定為 2px 的黑線 */
+            background-color: #e1d9c0;
+            padding: 10px;
+            /* 卡片內側邊距設定 */
+            border-radius: 8px;
+            /* 卡片邊角半徑設定 */
+            text-align: center;
+            /* 文字居中 */
+            margin: 10px;
+            /* 卡片外側邊距設定 */
+        }
+
+        .prize-card img {
+            max-width: 100%;
+            /* 圖片寬度不超過卡片寬度 */
+            height: auto;
+            /* 高度自動調整 */
+            display: block;
+            /* 使得 margin 可用 */
+            margin: 0 auto;
+            /* 圖片在卡片中居中 */
+            margin-bottom: 1em;
+        }
+
+        .prize-card h4 {
+            font-size: 1.2em;
+            /* 文字字體大小設定 */
+            text-align: center;
+            /* 文字居中對齊 */
+            margin-bottom: 1em;
+            /* 文字下方外側邊距設定 */
+        }
+
+        .prize-card p {
+            margin-top: 1em;
+            /* 在p上方增加邊距 */
+        }
+
+        /* 產品區頁尾的 CSS 設定 */
+        .product-footer {
+            display: flex;
+            /* 採用彈性排列方式 */
+            justify-content: space-between;
+            /* 子元件間留有相同的空間 */
+            margin-top: 1em;
+            /* 子元件上方外側邊距設定 */
+        }
+
+        .product-footer button {
+            background-color: #835c3b;
+            /* 按鈕背景顏色設定 */
+            color: #f8f4e3;
+            font-size: 1em;
+            /* 按鈕字體大小設定 */
+            padding: 10px 20px;
+            /* 按鈕內側邊距設定 */
+            border: none;
+            /* 按鈕無邊框 */
+            cursor: pointer;
+            /* 滑鼠懸浮時改變形狀 */
+            transition: background-color 0.3s;
+            /* 按鈕背景顏色變換速度設定 */
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        .product-footer button:hover {
+            background-color: #e1d9c0;
+            color: #835c3b;
+        }
+
+        /* 視口寬度在 768px 以下時的樣式 */
+        @media (max-width: 768px) {
+            .product-section {
+                /* 使元素在容器中占满可用宽度 */
+                width: 100%;
+                /* 考虑到内边距(padding)在总宽度内计算 */
+                box-sizing: border-box;
+                /* 减小内边距以更适应小屏幕 */
+                padding: 10px;
+                /* 设定小于最大宽度时层的外边距 */
+                margin: 10px;
+                /* 确保宽度不会超过所允许的最大宽度 */
+                max-width: 100%;
+            }
+
+            .product-header img {
+                /* 防止图片溢出其容器 */
+                max-width: 100%;
+                height: auto;
+            }
+
+            .product-title {
+                /* 减小标题的字号以适应较小的屏幕 */
+                font-size: 1.5em;
+                margin: 0.5em 0;
+            }
+
+            .info-bar {
+                /* 较小屏幕上的信息栏是垂直排列的 */
+                flex-direction: column;
+                text-align: center;
+                /* 增加间距以分隔店名和价格 */
+                margin-bottom: 10px;
+            }
+
+            .shop-name,
+            .price {
+                /* 总是100%宽度对于小屏幕 */
+                width: 100%;
+                /* 去掉可能存在的左右外边距 */
+                margin: 0;
+            }
+
+            .purchase-options ul {
+                /* 在手机视图中，确保选项是垂直堆叠 */
+                flex-direction: column;
+            }
+
+            .purchase-options button {
+                /* 增加按钮的上下外边距以加强触摸目标在移动设备上 */
+                margin: 10px 0;
+            }
+
+            .prize-details {
+                display: flex;
+                /* 使用flex布局 */
+                flex-wrap: wrap;
+                /* 允许内容自动换行 */
+                justify-content: center;
+                /* 在水平方向上居中对齐 */
+                gap: 10px;
+                /* 设置元素之间的间隙 */
+                overflow-x: hidden;
+                padding: 0 10px;
+                /* 为了避免内容紧贴到容器边缘，可以设置一些内边距 */
+                margin: 0;
+                /* 移除上下外边距，如果有的话 */
+            }
+
+            .prize-details span {
+                white-space: normal;
+                /* 允许在这些元素内部自动换行 */
+                text-align: center;
+                /* 每个元素内的文字居中对齐 */
+            }
+
+            .prizes {
+                /* 确保奖品是垂直堆叠和居中的 */
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .prize-card {
+                /* 允许每个奖品卡片占满屏幕的大部分宽度 */
+                width: 90%;
+                /* 在手机视图中调整边距 */
+                margin: 10px 0;
+            }
+
+            .prize-card img {
+                /* 图片不会溢出它的容器 */
+                width: 100%;
+                height: auto;
+            }
+
+            .product-footer {
+                /* 在较小的屏幕上垂直排列页脚按钮 */
+                flex-direction: column;
+                width: 100%;
+                /* 使页脚占满整个宽度 */
+            }
+
+            .product-footer button {
+                /* 使按钮宽度为自身内容宽度，但在小屏幕上保留一定边距 */
+                width: auto;
+                margin: 10px;
+            }
+        }
+
+        /* 籤紙一覽 */
+        /* 調整籤紙區塊的顯示 */
+        /* 產品細節與獎品區塊的 CSS 設定 */
+        .result {
+            border-top: 2px solid #835c3b;
+            /* 區塊頂部設定黑色邊框 */
+            padding-top: 1em;
+            /* 區塊內側頂部邊距設定 */
+            margin-top: 1em;
+            /* 區塊外側頂部邊距設定 */
+            margin-bottom: 1em;
+        }
+
+        #ticket-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            /* 確保從左邊開始排列 */
+            align-items: flex-start;
+            /* 項目從上方開始對齊 */
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* 調整每個籤紙項目的顯示 */
+        .flex-item {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            /* 將內容置於水平方向的中央 */
+            align-items: center;
+            /* 將內容置於垂直方向的中央 */
+            width: 23%;
+            /* 設定寬度，留出空間給間隔 */
+            margin: 1%;
+            /* 間隔，確保每行四個 */
+            /* 如果您希望圖片垂直居中，在 flex-item 內部使用 flexbox*/
+        }
+
+        .flex-item img {
+            max-width: 100%;
+            /* 圖片最大寬度為 flex-item 的寬度 */
+            height: auto;
+            /* 保持圖片原始比例 */
+        }
+
+        /* 保持響應式設計 */
+        @media screen and (max-width: 768px) {
+            .flex-item {
+                width: 48%;
+                /* 在較小的螢幕上調整為一行兩個項目 */
+                margin: 1%;
+            }
+        }
+
+        .selected-img {
+            border: 3px solid #F4D7A6;
+            /* 柔和的奶油色边框 */
+            box-shadow: 0px 0px 8px #FF0000;
+            /* 鲜艳的红色阴影 */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!--漢堡選單按鈕-->
+        <input type="checkbox" name="" id="menu-control" />
+
+        <div class="header">
+            <h2 class="logo">
+                <a href="index.html">
+                    <img src="playone/icon/PlayOneLOGO.svg" alt="" />
+                </a>
+            </h2>
+            <!--漢堡選單 點選 label 標籤觸發上面的 checkbox -->
+            <label for="menu-control" class="menu-btn">
+                <span></span>
+            </label>
+            <nav class="navbar">
+                <div class="nav-links">
+                    <!-- 這裡放置其他導航連結 -->
+                    <a href="index.html">首頁</a>
+                    <a href="about-us.html">關於我們</a>
+                    <a href="news.html">最新消息</a>
+                    <a href="ichiban.html">一番賞</a>
+                    <a href="contact-us.html">聯繫客服</a>
+                </div>
+                <div class="nav-buttons">
+                    <!-- 這裡放置動作按鈕 -->
+                    <button class="signup-btn"><a href="register.html">註冊</a></button>
+                    <button class="login"><a href="login.html">登入</a></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="product-section">
+            <header class="product-header">
+                <img src="../playone/one piece the new king/banner.jpg" alt="航海王新四皇">
+                <h1 class="product-title">商品名稱: ONE PIECE航海王 新四皇</h1>
+            </header>
+            <article class="product-details">
+                <div class="info-bar">
+                    <p class="shop-name"> <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                            viewBox="0 0 24 24">差低玩具</p>
+                    <p class="price"><img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                            viewBox="0 0 24 24"> 1抽305 / 3抽1000 / 10抽2900</p>
+                </div>
+
+                <section class="info-section">
+                    <h2>注意事項</h2>
+                    <p>
+                        單抽開獎保護200秒，多抽一次+20秒(x抽數)，抽五抽=300秒(以此類推)，保護上限600秒。<br>
+                        下單前須知：<br>
+                        一番賞、盲盒商品為「線上機率型」商品，<br>
+                        一但完成抽獎程序，將無法「退貨及退款」！無法接受請勿消費!<br>
+                        除非有品質瑕疵，因此在收到「商品拆封」時，請「全程綠影」以保護雙方權益。<br>
+                        盒況若有明顯損傷會事先告知，若顧客對於盒況有相當高的要求(八角、無損等)，<br>
+                        建議考慮過後再行消費！<br>
+                        消費前請「務必」確認我們的消費規範再進行購買，謝謝！
+                    </p>
+                </section>
+
+                <nav class="purchase-options">
+                    <ul>
+                        <li>
+                            <div class="remaining-draws">
+                                剩餘抽數/總抽數: (78/78)
+                            </div>
+                            <button type="button" id="selectAllTickets">剩餘全包</button>
+                        </li>
+                        <li>
+                            <div class="prize-details">
+                                <span>A賞 (3/3)</span>
+                                <span>B賞 (2/2)</span>
+                                <span>D賞 (2/2)</span>
+                                <span>C賞 (2/2)</span>
+                                <span>E賞 (1/1)</span>
+                                <span>F賞 (20/20)</span>
+                                <span>G賞 (20/20)</span>
+                                <span>H賞 (20/20)</span>
+                                <span>I賞 (20/20)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <button type="button" onclick="startDraw()">開始抽賞</button>
+                        </li>
+                    </ul>
+                </nav>
+            </article>
+            <div class="prizes" id="prizes-section">
+                <h3>賞品一覽</h3>
+                <div class="prize-card" id="prize-A">
+                    <img src="../playone/one piece the new king/prizeA.jpg" alt="A賞">
+                    <h4>A賞 四皇 傑克<br> MASTERLISE EXPIECE</h4>
+                    <p>剩餘數量/總數量:3/3</p>
+                </div>
+                <div class="prize-card" id="prize-B">
+                    <img src="../playone/one piece the new king/prizeB.jpg" alt="B賞">
+                    <h4>B賞 四皇 馬歇爾・D・汀奇<br>MASTERLISE EXPIECE</h4>
+                    <p>剩餘數量/總數量:2/2</p>
+                </div>
+                <div class="prize-card" id="prize-C">
+                    <img src="../playone/one piece the new king/prizeC.jpg" alt="C賞">
+                    <h4>C賞 四皇 蒙奇·D·魯夫<br> MASTERLISE EXPIECE</h4>
+                    <p>剩餘數量/總數量:2/2</p>
+                </div>
+                <div class="prize-card" id="prize-D">
+                    <img src="../playone/one piece the new king/prizeD.jpg" alt="D賞">
+                    <h4>D賞 四皇小丑巴奇<br> MASTERLISE EXPIECE</h4>
+                    <p>剩餘數量/總數量:2/2</p>
+                </div>
+                <div class="prize-card" id="prize-E">
+                    <img src="../playone/one piece the new king/prizeE.jpg" alt="E賞">
+                    <h4>四皇圖案 托特包</h4>
+                    <p>剩餘數量/總數量:1/1</p>
+                </div>
+                <div class="prize-card" id="prize-F">
+                    <img src="../playone/one piece the new king/prizeF.jpg" alt="F賞">
+                    <h4>四皇圖案 長短毛巾</h4>
+                    <p>剩餘數量/總數量:20/20</p>
+                </div>
+                <div class="prize-card" id="prize-G">
+                    <img src="../playone/one piece the new king/prizeG.jpg" alt="G賞">
+                    <h4>四皇圖案 壓克力吊飾</h4>
+                    <p>剩餘數量/總數量:20/20</p>
+                </div>
+                <div class="prize-card" id="prize-H">
+                    <img src="../playone/one piece the new king/prizeH.jpg" alt="H賞">
+                    <h4>四皇造型 透明文件夾&貼紙&票卡盒</h4>
+                    <p>剩餘數量/總數量:20/20</p>
+                </div>
+                <div class="prize-card" id="prize-I">
+                    <img src="../playone/one piece the new king/prizeI.jpg" alt="I賞">
+                    <h4>四皇造型 塑膠磁鐵/束帶/杯墊</h4>
+                    <p>剩餘數量/總數量:20/20</p>
+                </div>
+                <div class="prize-card" id="prize-Last">
+                    <img src="../playone/one piece the new king/lastprize.jpg" alt="Last賞">
+                    <h4>魯夫 MASTERLISE EXPIECE<br> 最後賞ver.</h4>
+                    <p>剩餘數量/總數量:1/1</p>
+                </div>
+            </div>
+            <div class="result" id="result-section" style="display: none;">
+                <!-- 您的籤紙內容 -->
+                <h3>籤紙一覽</h3>
+                <div id="ticket-section"></div>
+            </div>
+
+
+            <div class="product-footer">
+                <button type="button" onclick="startDraw()">開始抽賞</button>
+                <button type="button" onclick="window.history.back()">返回一番賞</button>
+                </button>
+            </div>
+        </section>
+    </main>
+
+</body>
+<footer>
+    <section class="footer-section">
+        <footer class="footer-distributed">
+            <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up'></i></div>
+            <div class="footer-left">
+                <h2 class="footer-logo">
+                    <a href="index.html">
+                        <img src="../playone/icon/PlayOneLogo.svg" alt="" />
+                    </a>
+                </h2>
+            </div>
+
+            <div class="footer-center">
+                <div class="footer-contact-info">
+                    <p class="element-TEL">
+                        地址：玩一番股份有限公司 桃園市中壢區復興路46號9樓<br>
+                        TEL: 02-222-5978 ｜ FAX: 02-666-5978<br>
+                        copyright©2024PLAY ONE 玩一番 . All rights reserved.<br>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-reference-info">
+                <div class="text-wrapper-1">參考資料來源: | Pinterest:https://www.pinterest.com/</div>
+                <div class="text-wrapper-2">
+                    本網站為緯育TibaMe前端工程師班第xx期學員專題作品，本平台僅供學習、展示之用。
+                </div>
+            </div>
+        </footer>
+
+    </section>
+</footer>
+<script src="playone.js"></script>
+<script>
+
+
+
+    //切換籤紙頁面
+    function startDraw() {
+        var prizesSection = document.getElementById("prizes-section");
+        var resultSection = document.getElementById("result-section");
+
+        if (prizesSection.style.display !== "none") {
+            prizesSection.style.display = "none";
+            resultSection.style.display = "block";
+        } else {
+            prizesSection.style.display = "block";
+            resultSection.style.display = "none";
+        }
+    }
+
+    //籤紙js
+    document.addEventListener("DOMContentLoaded", function () { // 确保DOM完全加载后再运行代码
+
+        const container = document.getElementById('ticket-section'); // 获取容器元素
+        for (let i = 1; i < 91; i++) { // 循环90次创建方格
+            const square = document.createElement('div'); // 创建方格
+            square.className = 'flex-item'; // 分配class以应用CSS样式
+            square.id = `${i}`; // 给每个方格一个唯一的ID
+
+            const img = document.createElement('img');
+            img.src = `/playone/icon/ticket.svg`;
+            img.alt = 'Ticket';
+            // 将<img>元素添加到方块中
+            square.appendChild(img);
+
+            // 重要：绑定点击事件到img上，而不是square
+            img.addEventListener('click', function () {
+                this.classList.toggle('selected-img');
+            });
+
+            container.appendChild(square); // 将方格添加到容器中
+        }
+        // 剩餘全包按钮的功能
+        const selectAllButton = document.getElementById('selectAllTickets');
+        const images = container.querySelectorAll('img'); // 确保获取所有已创建的图片元素
+
+        selectAllButton.addEventListener('click', function () {
+            images.forEach(function (img) {
+                img.classList.toggle('selected-img');
+            });
+        });
+    });
+
+</script>
+
+</html>

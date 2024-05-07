@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    </link>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    </link>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</head>
+<style>
+    .owl-theme .item {
+        height: 20rem;
+        background: #4dc7a0;
+        padding: 1rem;
+        margin: 2rem;
+    }
+</style>
+
+<body>
+    <section> 
+        <div class="owl-carousel owl-theme">
+        <div class="item">
+            
+        </div>
+        <div class="item">
+            
+        </div>
+        <div class="item">
+            
+        </div>
+        <div class="item">
+            
+        </div>
+        <div class="item">
+            
+        </div>
+    </div></section>
+   
+    <script>
+         $(".owl-carousel").owlCarousel({
+    loop: true, // 循环播放
+    margin: 10, // 外距 10px
+    nav: false, // 显示点点
+    responsive: {
+        0: {
+            items: 1 // 默认，屏幕大小在0及以上时显示 1 个项
+        },
+        768: {
+            items: 1 // 屏幕大小为 768 及以上时仍旧显示 1 个项
+        }
+    }
+  });
+    </script>
+</body>
+
+</html>

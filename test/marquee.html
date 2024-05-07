@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 這裡我們在網頁中創建一個叫做 "marquee" 的區域 */
+        .marquee {
+            /* 讓 "marquee" 區域裡面的東西並排排好 */
+            display: flex;
+            /* 如果 "marquee" 區域裡的東西太多，超出了區域，則隱藏超出的部分 */
+            overflow: hidden;
+            /* "marquee" 區域的高度 */
+            height: 10vh;
+            /* 不讓使用者選取 "marquee" 區域裡的文字或圖片 */
+            user-select: none;
+            /* "marquee" 區域裡東西彼此之間的間距 */
+            gap: 2rem;
+            /* "marquee" 區域的上邊和下邊距離內裏的東西的距離 */
+            padding-top: 11rem;
+            padding-bottom: 12rem;
+        }
+        /* 這裡我們在 "marquee" 區域中創建一個叫做 "marquee_group" 的小區域 */
+        .marquee_group {
+            /* "marquee_group" 中的東西不會被壓縮 */
+            flex-shrink: 0;
+            /* 讓 "marquee_group" 區域裡面的東西並排排好 */
+            display: flex;
+            /* 讓 "marquee_group" 區域裡面的東西在同一條直線上 */
+            align-items: center;
+            /* 讓 "marquee_group" 中的東西在空間中均勻地分開 */
+            justify-content: space-between;
+            /* "marquee_group" 區域裡東西彼此之間的間距 */
+            gap:2rem;
+            /* 告訴 "marquee_group" 占用全部容器空間 */
+            min-width: 100%;
+            /* 讓 "marquee_group" 中的東西不停地動 */
+            animation: scroll 15s linear infinite;
+        }
+        /* 這裡我們在 "marquee_group" 區域中創建一個叫做 "span" 的部分 */
+        .marquee_group span {
+            /* 設定 "span" 的顏色 */
+            color: rgb(0, 0, 0);
+            /* 設定 "span" 的字體大小 */
+            font-size: 2vw;
+            /* 字體的粗度 */
+            font-weight: 800;
+            /* 設定字體的範圍在一行裏面 */
+            white-space: nowrap;
+            /* 設定 "span" 的字體類型 */
+            font-family: 'Syne', sans-serif !important;
+            /* 把字體都變成大寫 */
+            text-transform: uppercase;
+        }
+        /* 這裡我們創建一個叫做 "scroll" 的動作 */
+        @keyframes scroll {
+            /* 動作開始時，東西的位置 */
+            from {
+                transform: translateX(0);
+            }
+            /* 動作結束時，東西的位置 */
+            to {
+                transform: translateX(calc(-100% - 2rem));
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="marquee">
+            <div class="marquee_group">
+                <span>恭喜 JABLE 抽中F賞 水蛇監獄</span>
+                <span>恭喜 熊哥哥 抽中SP賞 點點點</span>
+                <span>恭喜 熊寶 抽中C賞 肥臉抱枕</span>
+            </div>
+            <div class="marquee_group" aria-hidden="true">
+                <span>恭喜 JABLE 抽中F賞 水蛇監獄</span>
+                <span>恭喜 熊哥哥 抽中SP賞 點點點</span>
+                <span>恭喜 熊寶 抽中C賞 肥臉抱枕</span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

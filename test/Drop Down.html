@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .dropbtn {
+        position: absolute;
+        background-color: #D9594C;
+        color: #fff;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        right: 120px;
+        /* 调整这个值来指定距离右侧的距离 */
+        top: 20px;
+        width: 80px;
+        /* 添加宽度样式 */
+        height: 40px;
+        /* 添加高度样式 */
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 40px;
+        top: 55px;
+        background-color: #A7C7E7;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: #fff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #232732;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #FBDE57;
+        color: #232732;
+        /* 修改鼠标悬停时的文本颜色 */
+    }
+
+    /* 下拉效果 */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* 選項之間的間距 */
+    .dropdown-content a+a {
+        border-top: 1px solid #ddd;
+    }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">popular</button>
+        <div class="dropdown-content">
+            <a href="#">航海王</a>
+            <a href="#">火影忍者</a>
+            <a href="#">獵人</a>
+        </div>
+        <div>
+        </div>
+    </div>
+    
+</body>
+</html>

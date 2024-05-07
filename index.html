@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- 貓頭鷹輪播 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>PlayOne玩一番</title>
+</head>
+
+<body>
+    <header>
+        <!--漢堡選單按鈕-->
+        <input type="checkbox" name="" id="menu-control" />
+
+        <div class="header">
+            <h2 class="logo">
+                <a href="index.html">
+                    <img src="playone/icon/PlayOneLOGO.svg" alt="" />
+                </a>
+            </h2>
+            <!--漢堡選單 點選 label 標籤觸發上面的 checkbox -->
+            <label for="menu-control" class="menu-btn">
+                <span></span>
+            </label>
+            <nav class="navbar">
+                <div class="nav-links">
+                    <!-- 這裡放置其他導航連結 -->
+                    <a href="index.html">首頁</a>
+                    <a href="about-us.html">關於我們</a>
+                    <a href="news.html">最新消息</a>
+                    <a href="ichiban.html">一番賞</a>
+                    <a href="contact-us.html">聯繫客服</a>
+                </div>
+                <div class="nav-buttons">
+                    <!-- 這裡放置動作按鈕 -->
+                    <button class="signup-btn"><a href="register.html">註冊</a></button>
+                    <button class="login"><a href="login.html">登入</a></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- 首頁標題 -->
+        <section>
+            <div class="title-container">
+                <div class="background-image"></div> <!-- 添加背景元素 -->
+                <div class="title-content">最新、最快、最透明的抽獎體驗!</div>
+                <a href="ichiban.html" class="explore-button">立即探索</a>
+            </div>
+        </section>
+        <!-- 跑馬燈 -->
+        <section>
+            <div class="marquee">
+                <div class="marquee_group">
+                    <span>恭喜 JABLE 抽中F賞 水蛇監獄</span>
+                    <span>恭喜 熊哥哥 抽中SP賞 點點點</span>
+                    <span>恭喜 熊寶 抽中C賞 肥臉抱枕</span>
+                </div>
+                <div class="marquee_group" aria-hidden="true">
+                    <span>恭喜 JABLE 抽中F賞 水蛇監獄</span>
+                    <span>恭喜 熊哥哥 抽中SP賞 點點點</span>
+                    <span>恭喜 熊寶 抽中C賞 肥臉抱枕</span>
+                </div>
+            </div>
+        </section>
+        <!-- 無限輪播 -->
+        <section class="owl-carousel-container">
+            <div class="owl-carousel-title">
+                <h2>最近熱門</h2>
+            </div>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <a href="ichiban.html"><img src="playone/HUNTER×HUNTER- DAY OF DEPARTURE/Day Of Departure.jpg"
+                            alt=""></a>
+
+                </div>
+                <div class="item">
+                    <a href="ichiban.html"><img
+                            src="playone/BLUE LOCK -Take Up Arms Striker!!-/BLUE LOCK -Take Up Arms Striker!!-.jpg"
+                            alt=""></a>
+
+                </div>
+                <div class="item">
+                    <a href="ichiban.html">
+                        <img src="playone/HUNTER×HUNTER _ REVENGE OF SCARLET/revenge of scarlet banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="ichiban.html"><img src="playone/JOJO_DIAMOND IS UNBREAKABLE/banner.jpg" alt=""></a>
+
+
+                </div>
+                <div class="item">
+                    <a href="ichiban.html"><img src="playone/My Hero Academia/banner.jpg" alt=""></a>
+
+                </div>
+            </div>
+        </section>
+        <!-- 跑馬燈 -->
+        <section>
+            <div class="marquee">
+                <div class="marquee_group">
+                    <span>恭喜 JABLE 抽中F賞 水蛇監獄</span>
+                    <span>恭喜 熊哥哥 抽中SP賞 點點點</span>
+                    <span>恭喜 熊寶 抽中C賞 肥臉抱枕</span>
+                </div>
+                <div class="marquee_group" aria-hidden="true">
+                    <span>恭喜 JABLE 抽中F賞 水蛇監獄</span>
+                    <span>恭喜 熊哥哥 抽中SP賞 點點點</span>
+                    <span>恭喜 熊寶 抽中C賞 肥臉抱枕</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 商品清單 -->
+        <section>
+            <div class="fire">
+                <div class="fire-title">
+                    <h2>火熱開抽中</h2>
+                </div>
+
+                <div class="card-shop-container">
+                    <div class="card-shop">
+                        <div class="card-container" data-url="one-piece.html">
+                            <div class="label-block">
+                                多抽優惠!
+                            </div>
+                            <div class="image-block">
+                                <img src="../playone/one piece the new king/banner.jpg" alt="商品圖片">
+                            </div>
+                            <div class="text-block">
+                                <div class="content-block">
+                                    產品名:<br>
+                                    ONE PIECE航海王-<br>
+                                    新四皇
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">差低玩具
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">1抽305元
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-container">
+                            <div class="label-block">
+                                多抽優惠!
+                            </div>
+                            <div class="image-block">
+                                <img src="../playone/BLUE LOCK -Take Up Arms Striker!!-/BLUE LOCK -Take Up Arms Striker!!-.jpg"
+                                    alt="商品圖片">
+                            </div>
+                            <div class="text-block">
+                                <div class="content-block">
+                                    產品名:<br>
+                                    BLUE LOCK 藍色監獄～<br>
+                                    拿起武器的毀滅者<br>
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">虧賊玩具
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">1抽300元
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="card-container">
+                            <div class="label-block">
+                                多抽優惠!
+                            </div>
+                            <div class="image-block">
+                                <img src="../playone/HUNTER×HUNTER _ REVENGE OF SCARLET/revenge of scarlet banner.jpg"
+                                    alt="商品圖片">
+                            </div>
+                            <div class="text-block">
+                                <div class="content-block">
+                                    產品名:<br>
+                                    HUNTER×HUNTER 獵人<br>
+                                    REVENGE OF SCARLET
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">點點玩具
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">1抽350元
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-container">
+                            <div class="label-block">
+                                多抽優惠!
+                            </div>
+                            <div class="image-block">
+                                <img src="../playone/HUNTER×HUNTER- DAY OF DEPARTURE/Day Of Departure.jpg" alt="商品圖片">
+                            </div>
+                            <div class="text-block">
+                                <div class="content-block">
+                                    產品名:<br>
+                                    HUNTER×HUNTER<br>
+                                    DAY OF DEPARTURE
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">虧賊玩具
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">1抽300元
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-container">
+                            <div class="label-block">
+                                多抽優惠!
+                            </div>
+                            <div class="image-block">
+                                <img src="../playone/JOJO_DIAMOND IS UNBREAKABLE/banner.jpg" alt="商品圖片">
+                            </div>
+                            <div class="text-block">
+                                <div class="content-block">
+                                    產品名:<br>
+                                    JOJO 的奇妙冒險-不滅鑽石
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">虧賊玩具
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">1抽300元
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="card-container">
+                            <div class="label-block">
+                                多抽優惠!
+                            </div>
+                            <div class="image-block">
+                                <img src="../playone/Jujutsu Kaisen_3/Banner.jpg" alt="商品圖片">
+                            </div>
+                            <div class="text-block">
+                                <div class="content-block">
+                                    產品名:<br>
+                                    咒術迴戰-懷玉・玉折 參
+
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/shop-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">虧賊玩具
+                                </div>
+                                <div class="content-block">
+                                    <img src="../playone/icon/money-svgrepo-com.svg" alt="" width="30" height="30"
+                                        viewBox="0 0 24 24">1抽300元
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="ichiban.html" class="more-button">查看更多</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section class="footer-section">
+            <footer class="footer-distributed">
+                <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up'></i></div>
+                <div class="footer-left">
+                    <h2 class="footer-logo">
+                        <a href="index.html">
+                            <img src="../playone/icon/PlayOneLogo.svg" alt="" />
+                        </a>
+                    </h2>
+                </div>
+
+                <div class="footer-center">
+                    <div class="footer-contact-info">
+                        <p class="element-TEL">
+                            地址：玩一番股份有限公司 桃園市中壢區復興路46號9樓<br>
+                            TEL: 02-222-5978 ｜ FAX: 02-666-5978<br>
+                            copyright©2024PLAY ONE 玩一番 . All rights reserved.<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-reference-info">
+                    <div class="text-wrapper-1">參考資料來源: | Pinterest:https://www.pinterest.com/</div>
+                    <div class="text-wrapper-2">
+                        本網站為緯育TibaMe前端工程師班第xx期學員專題作品，本平台僅供學習、展示之用。
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+    </footer>
+    <script src="playone.js"></script>
+    <script>
+        
+    </script>
+
+</body>
+
+</html>

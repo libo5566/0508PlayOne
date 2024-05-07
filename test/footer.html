@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        /* 整體頁腳樣式 */
+        .footer-section {
+            background-color: #f7f0e7;
+        }
+
+        .footer-distributed {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            /* 保持内边距不变 */
+            margin: 1vw 4vw;
+            /* 根据需要调整左右的外边距 */
+        }
+
+
+        /* 左側Logo設定 */
+        .footer-logo img {
+            width: 120px;
+            /* 調整爲您需要的大小 */
+            height: auto;
+        }
+
+        .footer-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            /* 確保logo垂直方向上居中 */
+        }
+
+        /* 中央內容部分設定 */
+        .footer-center {
+            flex: 2;
+            /* 給予中間部分更多空間 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* 確保內容在這個區塊內部垂直和水平居中 */
+        }
+
+        /* 右側圖標設定 */
+        .footer-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .footer-icons a {
+            margin: 0 10px;
+            color: #333;
+            /* 可根據您的設計自行調整顏色 */
+        }
+
+        .fab {
+            font-size: 20px;
+            /* 調整以符合您的設計 */
+        }
+
+        /* 參考資料設定 */
+        .footer-reference-info {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            order: 3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 響應式布局調整 */
+        @media screen and (max-width: 768px) {
+            .footer-distributed {
+                flex-direction: column;
+                align-items: center;
+                /* 確保在小螢幕上所有項目都能居中 */
+            }
+
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                justify-content: center;
+                flex: none;
+                margin-bottom: 3vw;
+                /* 取消原本的彈性設定，讓它們在小螢幕上寬度自適應 */
+            }
+
+            .footer-reference-info {
+                font-size: 0.8em;
+                /* 在小螢幕上適當縮小字體大小 */
+            }
+        }
+
+        /* back-to-top */
+        .back-to-top {
+            visibility: hidden;
+            background-color: #2c3e50;
+            color: #fff;
+            width: 42px;
+            height: 42px;
+            text-align: center;
+            line-height: 38px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 90;
+            cursor: pointer;
+            opacity: 0;
+            border-radius: 3px;
+            transition: all .4s;
+        }
+
+        .back-to-top .fa {
+            font-size: 22px;
+            vertical-align: middle
+        }
+
+        .back-to-top:hover {
+            background-color: #2ecc71;
+            color: #fff;
+            opacity: 1;
+        }
+
+        .back-to-top.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="footer-section">
+        <footer class="footer-distributed">
+            <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up'></i></div>
+            <div class="footer-left">
+                <h2 class="footer-logo">
+                    <a href="">
+                        <img src="../playone/icon/PlayOneLogo.svg" alt="" />
+                    </a>
+                </h2>
+            </div>
+
+            <div class="footer-center">
+                <div class="footer-contact-info">
+                    <p class="element-TEL">
+                        地址：玩一番股份有限公司 桃園市中壢區復興路46號9樓<br>
+                        TEL: 02-222-5978 ｜ FAX: 02-666-5978<br>
+                        copyright©2024PLAY ONE 玩一番 . All rights reserved.<br>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-reference-info">
+                <div class="text-wrapper-1">參考資料來源: | Pinterest:https://www.pinterest.com/</div>
+                <div class="text-wrapper-2">
+                    本網站為緯育TibaMe前端工程師班第xx期學員專題作品，本平台僅供學習、展示之用。
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</body>
+<script>
+    // Back to top button
+    (function () {
+        $(document).ready(function () {
+            return $(window).scroll(function () {
+                return $(window).scrollTop() > 600 ? $("#back-to-top").addClass("show") : $("#back-to-top").removeClass("show")
+            }), $("#back-to-top").click(function () {
+                return $("html,body").animate({
+                    scrollTop: "0"
+                })
+            })
+        })
+    }).call(this);
+</script>
+
+</html>

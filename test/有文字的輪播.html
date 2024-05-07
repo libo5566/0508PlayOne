@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <style>
+    .owl-carousel-container {
+        max-width: 100%;
+        padding: 20px;
+        background-image: url('playone/arches.png');
+        background-color: #f7f0e7;
+    }
+    
+    .owl-carousel .item {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .owl-carousel .item img {
+        width: 100%;
+        object-fit: contain; /* 图片将保持原比例并尽量全部显示 */
+        max-height: 50vw; /* 图片最大高度根据视窗宽度确定 */
+        height: auto; /* 图片高度自动调整 */
+    }
+    
+    
+    @media screen and (max-width: 768px) {
+    .owl-carousel-container {
+        padding: 10px;
+    }
+    .owl-carousel .item img {
+        max-height: 50vw; /* 在较小屏幕上，降低图片的最大高度可以是50vw，或者更小的值，你可以根据需要进行调整 */
+    }
+}
+
+/* 可以进一步减小图片高度，如果50vw仍然太高 */
+@media screen and (max-width: 480px) {
+    .owl-carousel .item img {
+        max-height: 30vw; /* 在更小的屏幕上，进一步减小图片高度 */
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="owl-carousel-container">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="../playone/ DAY OF DEPARTURE/Day Of Departure.jpg" alt="">
+                <h3 class="item-title">DAY OF DEPARTURE</h3>
+                <p class="item-description">这是描述DAY OF DEPARTURE的文字</p>
+            </div>
+            <div class="item">
+                <img src="../playone/BLUE LOCK -Take Up Arms Striker!!-/BLUE LOCK -Take Up Arms Striker!!-.jpg" alt="">
+                <h3 class="item-title">DAY OF DEPARTURE</h3>
+                <p class="item-description">这是描述DAY OF DEPARTURE的文字</p>
+            </div>
+            <div class="item">
+                <img src="../playone/HUNTER×HUNTER _ REVENGE OF SCARLET/revenge of scarlet banner.jpg" alt="">
+                <h3 class="item-title">DAY OF DEPARTURE</h3>
+                <p class="item-description">这是描述DAY OF DEPARTURE的文字</p>
+                
+            </div>
+            <div class="item">
+                <img src="../playone/JOJO_DICTATORAMOND IS UNBREAKABLE/banner.jpg" alt="">
+                <h3 class="item-title">DAY OF DEPARTURE</h3>
+                <p class="item-description">这是描述DAY OF DEPARTURE的文字</p>
+
+            </div>
+            <div class="item">
+                <img src="../playone/My Hero Academia/banner.jpg" alt="">
+                <h3 class="item-title">DAY OF DEPARTURE</h3>
+                <p class="item-description">这是描述DAY OF DEPARTURE的文字</p>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    1028: {
+                        items: 3
+                    }
+                },
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
+            });
+        });
+    </script>
+</body>
+</html>
