@@ -115,12 +115,6 @@ body {
     /* 允許這部分延展，填充額外的空間 */
 }
 
-.nav-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .nav-links {
     display: flex;
     align-items: center;
@@ -132,6 +126,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .nav-buttons button {
@@ -147,6 +142,7 @@ body {
     display: flex;
     align-items: center;
     height: 40px;
+    border-radius: 5px;
 }
 
 .nav-buttons a {
@@ -611,7 +607,6 @@ body {
     max-width: 100%;
     padding: 20px;
     background-color: #f7f0e7;
-
 }
 
 .owl-carousel-title {
@@ -638,6 +633,7 @@ body {
     border: 5px solid #333;
     box-sizing: border-box;
     margin: 0 20px;
+    border-radius: 5px;
 }
 
 .owl-carousel .item:hover {
