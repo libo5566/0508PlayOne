@@ -729,7 +729,6 @@ body {
     background-color: #f7f0e7;
     position: relative;
     padding-bottom: 100px;
-
     max-width: 100%;
     padding: 20px;
     background-color: #f7f0e7;
@@ -755,10 +754,6 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-    .fire {
-        padding: 0;
-    }
-
     .fire-title {
         font-size: 18px;
         /* 在较小的屏幕上进一步调大字体大小 */
