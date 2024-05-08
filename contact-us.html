@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我們</title>
+    <title>PlayOne玩一番</title>
     <!-- 重設css -->
     <link rel="stylesheet" href="reset.css">
     <!-- css -->
@@ -19,165 +19,161 @@
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
-/* 每一区块的上下间距 */
-section {
-    padding-top: 30px; /* 上方间距 */
-    padding-bottom: 30px; /* 下方间距 */
-}
+        section {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
 
-/* 联系我们区块的样式设置 */
-.contact-us {
-    max-width: 600px; /* 最大宽度设置为600px */
-    margin: 0 auto; /* 水平居中显示 */
-    padding: 20px; /* 内边距 */
-    border-radius: 8px; /* 圆角边框 */
-    background-color: #e1d9c0; /* 背景颜色 */
-    color: #835c3b; /* 文字颜色 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 盒子阴影效果 */
-}
 
-/* 联系客服标题的样式设置 */
-.contact-us-title {
-    font-size: 24px; /* 字型大小 */
-    text-align: center; /* 居中对齐 */
-    margin-bottom: 20px; /* 下方间距 */
-    padding: 5px 0; /* 上下内边距 */
-    color: #835c3b; /* 文字颜色 */
-    border-bottom: 2px solid #835c3b; /* 下方边框 */
-}
+        .contact-us {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #FBF0D9;
+            color: #835c3b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-/* 表格组容器的样式设置 */
-.form-group {
-    display: flex; /* 启用Flex布局 */
-    flex-direction: column; /* 纵向排列 */
-    gap: 10px; /* 元素间距 */
-}
 
-/* 表格组内部div的样式 */
-.form-group div {
-    display: flex; /* 启用Flex布局 */
-    flex-direction: column; /* 纵向排列 */
-    margin-bottom: 10px; /* 下方间距 */
-}
+        .contact-us-title {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 5px 0;
+            color: #835c3b;
+            border-bottom: 2px solid #835c3b;
+        }
 
-/* 输入框及选择框的样式 */
-.input-field,
-.select {
-    padding: 12px 15px; /* 内边距增加以提高填写舒适度 */
-    border: 1px solid #ccc; /* 边框设置使输入区域更清晰 */
-    background-color: #f8f4e3; /* 背景颜色 */
-    color: #835c3b; /* 文字颜色 */
-    border-radius: 5px; /* 圆角边框 */
-}
 
-/* 输入框及选择框获得焦点时的样式 */
-.input-field:focus,
-.select:focus {
-    border-color: #835c3b; /* 焦点时边框颜色 */
-    outline: none; /* 移除默认的焦点框 */
-    box-shadow: 0 0 5px rgba(131, 92, 59, 0.5); /* 添加轻微发光效果 */
-}
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-/* 标签的样式 */
-.label {
-    font-weight: bold; /* 字体加粗 */
-    margin-bottom: 5px; /* 与输入框间增加一些空间 */
-    color: #835c3b; /* 文字颜色 */
-    display: block; /* 单独占一行 */
-}
 
-/* 选择菜单的样式 */
-.select {
-    padding: 10px; /* 内边距 */
-    border: 2px solid #989898; /* 边框 */
-    border-radius: 4px; /* 圆角边框 */
-    background-color: white; /* 背景颜色 */
-    font-size: 16px; /* 字型大小 */
-}
+        .form-group div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
 
-/* 问题与意见区块的边距设置 */
-.form-group .option {
-    margin-top: 20px; /* 上方间距 */
-    margin-bottom: 10px; /* 下方间距 */
-}
+        .input-field,
+        .select {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            background-color: #f8f4e3;
+            color: #835c3b;
+            border-radius: 5px;
+        }
 
-/* 问题与意见标签的下方间距 */
-.form-group .option label {
-    margin-bottom: 20px;
-}
+        .input-field:focus,
+        .select:focus {
+            border-color: #835c3b;
+            outline: none;
+            box-shadow: 0 0 5px rgba(131, 92, 59, 0.5);
+        }
 
-/* 隐私政策同意复选框的样式 */
-.agree-text {
-    margin-right: 5px;
-    cursor: pointer;
-    color: #835c3b; /* 文字颜色调整 */
-}
 
-.agree {
-    margin-right: 5px; /* 右侧间距 */
-}
+        .label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #835c3b;
+            display: block;
+        }
 
-/* 提交按钮的样式 */
-.con-btn-group {
-    display: flex; /* 启用Flex布局 */
-    flex-direction: column; /* 纵向排列 */
-    gap: 10px; /* 按钮间距 */
-}
 
-.con-btn {
-    padding: 15px 30px; /* 内边距 */
-    text-align: center; /* 居中对齐 */
-    border-radius: 5px; /* 圆角边框 */
-    cursor: pointer; /* 游标指针 */
-    transition: all 0.3s ease-in-out; /* 过渡效果 */
-    border: 2px solid #835c3b; /* 边框 */
-    background-color: transparent; /* 透明背景 */
-    color: #835c3b; /* 文字颜色 */
-    margin-top: 10px; /* 上方间距 */
-}
+        .select {
+            padding: 10px;
+            border: 2px solid #989898;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 16px;
+        }
 
-.con-btn:hover {
-    background-color: #835c3b; /* 悬停时背景色 */
-    color: #f8f4e3; /* 悬停时文字颜色 */
-}
 
-a.con-btn-link {
-    text-decoration: none !important;
-    color: #f8f4e3; 
-    display: block;
-}
+        .form-group .option {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
 
-@media (max-width: 768px) {
-    section {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
 
-    .contact-us {
-        padding: 15px;
-        margin: 20px;
-        background-color: #e1d9c0;
-    }
+        .form-group .option label {
+            margin-bottom: 20px;
+        }
 
-    .form-group {
-        flex-direction: column;
-    }
 
-    .con-btn-group {
-        flex-direction: column;
-        gap: 10px;
-    }
+        .agree-text {
+            margin-right: 5px;
+            cursor: pointer;
+            color: #835c3b;
+        }
 
-    .con-btn {
-        width: auto;
-        padding: 10px 20px;
-    }
+        .agree {
+            margin-right: 5px;
+        }
 
-    .con-btn a {
-        color: #835c3b; 
+        .con-btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-    }
-}
+        .con-btn {
+            padding: 15px 30px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid #835c3b;
+            background-color: transparent;
+            color: #835c3b;
+            margin-top: 10px;
+        }
+
+        .con-btn:hover {
+            background-color: #835c3b;
+            color: #f8f4e3;
+        }
+
+        a.con-btn-link {
+            text-decoration: none !important;
+            color: #f8f4e3;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .contact-us {
+                padding: 15px;
+                margin: 20px;
+                background-color: #e1d9c0;
+            }
+
+            .form-group {
+                flex-direction: column;
+            }
+
+            .con-btn-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .con-btn {
+                width: auto;
+                padding: 10px 20px;
+            }
+
+            .con-btn a {
+                color: #835c3b;
+
+            }
+        }
     </style>
 </head>
 
@@ -264,7 +260,7 @@ a.con-btn-link {
                             <span>重新填寫</span>
                         </div>
                     </a>
-                    <a href=""class="con-btn-link">
+                    <a href="" class="con-btn-link">
                         <div class="con-btn">
                             <span>確認送出</span>
                         </div>
