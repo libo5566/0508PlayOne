@@ -6,6 +6,7 @@ body {
     overflow-x: hidden;
     font-size: Noto Sans TC, sans-serif;
     letter-spacing: 1.6px;
+    scroll-behavior: smooth;
 }
 body {
     /* color: #FDF5E6; 蒼白的背景色 */
