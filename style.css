@@ -1,6 +1,10 @@
 /* ----------------index.css------------------- */
 
 /* 全域設定 */
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     overflow-x: hidden;
