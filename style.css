@@ -397,6 +397,8 @@ body {
     opacity: 0;
     border-radius: 3px;
     transition: all .4s;
+    border: none;
+    padding: 0;
 }
 
 .back-to-top .fa {
