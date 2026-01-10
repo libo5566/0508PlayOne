@@ -17,14 +17,28 @@ $(document).ready(function () {
 //back-to-top
 (function () {
     $(document).ready(function () {
-        return $(window).scroll(function () {
-            return $(window).scrollTop() > 200 ? $("#back-to-top").addClass("show") : $("#back-to-top").removeClass("show")
-        }), $("#back-to-top").click(function () {
-            return $("html,body").animate({
-                scrollTop: "0"
-            })
-        })
-    })
+        var backToTopButton = $("#back-to-top");
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 200) {
+                backToTopButton.addClass("show");
+            } else {
+                backToTopButton.removeClass("show");
+            }
+        });
+
+        backToTopButton.click(function () {
+            if (prefersReducedMotion) {
+                $("html,body").scrollTop(0);
+            } else {
+                $("html,body").animate({
+                    scrollTop: 0
+                }, 400);
+            }
+            return false;
+        });
+    });
 }).call(this);
 
 //data-url
