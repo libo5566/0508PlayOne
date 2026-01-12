@@ -151,6 +151,23 @@
                 font-size: 1em;
             }
         }
+        .password-wrapper {
+            position: relative;
+        }
+        #toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 70%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #704214;
+        }
+        #toggle-password:focus-visible {
+            outline: 2px solid #A0522D;
+            border-radius: 3px;
+        }
     </style>
 </head>
 
@@ -196,9 +213,12 @@
                             <label for="username">會員帳號</label>
                             <input type="text" id="username" name="username" required="">
                         </div>
-                        <div class="password">
+                        <div class="password-wrapper">
                             <label for="password">會員密碼</label>
                             <input type="password" id="password" name="password" required="">
+                            <button type="button" id="toggle-password" aria-label="Show password">
+                                <i class="fa fa-eye"></i>
+                            </button>
                         </div>
                         <div class="check">
                             <label for="captcha">驗證碼</label>
@@ -271,6 +291,27 @@
 <script src="playone.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        const togglePassword = document.getElementById('toggle-password');
+        const password = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            // toggle the eye slash icon and aria-label
+            const icon = this.querySelector('i');
+            if (type === 'password') {
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+                this.setAttribute('aria-label', 'Show password');
+            } else {
+                icon.classList.add('fa-eye-slash');
+                icon.classList.remove('fa-eye');
+                this.setAttribute('aria-label', 'Hide password');
+            }
+        });
+
         var loginForm = document.getElementById('loginForm');
 
         loginForm.addEventListener('submit', function (e) {
