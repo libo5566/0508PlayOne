@@ -1,6 +1,12 @@
 /* ----------------index.css------------------- */
 
 /* 全域設定 */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 html,
 body {
     overflow-x: hidden;
